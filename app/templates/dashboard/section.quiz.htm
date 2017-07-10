@@ -1,0 +1,103 @@
+<!--<div id="widgetContainer" class="container"
+     style=" margin: 100px auto;position: relative;width: 800px;">
+-->
+<div id="widgetContainer" class="container"
+     style="margin: 0px auto;position: relative; width: 800px;">
+    
+    <check if="{{isset(@useWPWidget) && @useWPWidget }}">
+        <include href="dashboard/widgets/widget.progress.htm"/>
+    </check>
+
+    <check if="{{isset(@useTOWidget) && @useTOWidget }}">
+        <include href="dashboard/widgets/widget.behandling.htm"/>
+    </check>
+
+    <check if="{{isset(@usePHWidget) && @usePHWidget }}">
+        <include href="dashboard/widgets/widget.psychiatrichelp.htm"/>
+    </check>
+
+    <check if="{{isset(@usePEWidget) && @usePEWidget }}">
+        <include href="dashboard/widgets/widget.oplevelse.htm"/>
+    </check>
+
+    <check if="{{isset(@usePGWidget) && @usePGWidget }}">
+        <include href="dashboard/widgets/widget.problemgoal.htm"/>
+    </check>
+
+    <check if="{{isset(@useCWidget) && @useCWidget }}">
+        <include href="dashboard/widgets/widget.calendar.htm"/>
+    </check>
+
+    <check if="{{isset(@useALWidget) && @useALWidget }}">
+        <include href="dashboard/widgets/widget.activitylist.htm"/>
+    </check>
+    
+    <check if="{{isset(@useNATRegistrationWidget) && @useNATRegistrationWidget }}">
+        <include href="dashboard/widgets/widget.NATregistration.htm"/>
+    </check>
+    
+    <check if="{{isset(@useNATNegativeCircleWidget) && @useNATNegativeCircleWidget }}">
+        <include href="dashboard/widgets/widget.NATregistration.htm"/>
+    </check>
+    
+    <check if="{{isset(@useNATChallengeWidget) && @useNATChallengeWidget }}">
+        <include href="dashboard/widgets/widget.NATregistration.htm"/>
+    </check>
+    
+    <check if="{{isset(@useLevereglerWidget) && @useLevereglerWidget }}">
+        <include href="dashboard/widgets/widget.leveregler.htm"/>
+    </check>
+    
+    <check if="{{isset(@useDepressiveWidget) && @useDepressiveWidget }}">
+        <include href="dashboard/widgets/widget.depressive.htm"/>
+    </check>
+    
+    <check if="{{isset(@useForebyggeWidget) && @useForebyggeWidget }}">
+        <include href="dashboard/widgets/widget.Forebyggelsesplan.htm"/>
+    </check>
+
+</div>
+
+
+<div id="videosContainer"></div>
+
+<div id="quizContainer"></div>
+
+<script>
+
+    $(document).ready(function () {
+        <check if= "{{ isset(@pending_quiz) && ! isset(@GET.show_help_guide) }}">
+                setTimeout(showQuiz, 1000);
+        </check>
+
+        $('#widgetContainer').BlocksIt({
+            numOfCol: 3,
+            offsetX: 20,
+            offsetY: 20,
+            blockElement: '.WidgetWidth200, .WidgetWidth260'
+        });
+    })
+
+    <check if= "{{ isset(@pending_quiz) }}">
+        function showQuiz() {
+            $('#quizContainer').load('{{@ROOT}}/window/quiz{{@pending_quiz_step}}', function () {
+                $('#myModal').modal();
+                
+                // disable closing the modal
+                $('#myModal').data('bs.modal').isShown = false;
+            });
+        }
+    </check>
+
+    <check if= "{{ isset(@video) }}">
+        function showVideo() {
+            
+            $('#videosContainer').load('{{@ROOT}}/window/video/{{@video}}', function () {
+                $('#modalVideo').modal('show');
+            });
+        };
+        showVideo();
+    </check>
+
+
+</script>

@@ -1,0 +1,73 @@
+<input name="quiz_id" type="hidden"
+       value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="59">
+
+<div class="container">
+
+    <h2>55. Alt i alt, hvor tilfreds er du med den hjælp, du har modtaget?</h2>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[66][answer_id]) and @DATA.question[66][answer_id]==219 }}">
+                        <input type="radio" name="question[66][answer_id]" value="219"
+                               checked="checked">
+                        <false><input type="radio" name="question[66][answer_id]"
+                                      value="219"></false>
+                    </check>
+                    Meget tilfreds
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[66][answer_id]) and @DATA.question[66][answer_id]==220 }}">
+                        <input type="radio" name="question[66][answer_id]" value="220"
+                               checked="checked">
+                        <false><input type="radio" name="question[66][answer_id]"
+                                      value="220"></false>
+                    </check>
+                    Stort set tilfreds
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[66][answer_id]) and @DATA.question[66][answer_id]==221 }}">
+                        <input type="radio" name="question[66][answer_id]" value="221"
+                               checked="checked">
+                        <false><input type="radio" name="question[66][answer_id]"
+                                      value="221"></false>
+                    </check>
+                    Ligeglad/ ikke helt tilfreds
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[66][answer_id]) and @DATA.question[66][answer_id]==222 }}">
+                        <input type="radio" name="question[66][answer_id]" value="222"
+                               checked="checked">
+                        <false><input type="radio" name="question[66][answer_id]"
+                                      value="222"></false>
+                    </check>
+                    Ret utilfreds
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+
+</div>

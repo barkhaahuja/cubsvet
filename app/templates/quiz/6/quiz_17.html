@@ -1,0 +1,80 @@
+<link href="{{@ROOT}}/3rdparty/bootstrap-slider/css/slider.css" rel="stylesheet">
+
+<style>
+    .container-slider {
+        height: 60px;
+        background-color: #8F8D8D;
+        padding-top: 20px;
+    }
+
+    .indicator-slider {
+        height: 60px;
+        background-color: #8FE28F;
+    }
+
+    .indicator-slider p {
+        color: white;
+        font-size: 36px;
+        margin-top: 7px;
+        text-align: center;
+    }
+
+    .slider-handle {
+        background-color: #8FE28F;
+        background-image: none;
+    }
+</style>
+
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="18">
+
+    <h2>15. Helbredstilstand</h2>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <p>
+                For at hjælpe dig med at sige, hvor god eller dårlig en helbredstilstand er, har vi tegnet en skala, hvor den bedste helbredstilstand, du kan forestille dig, er markeret med 100 %, og den værste helbredstilstand, du kan forestille dig, er markeret med 0 %.  Vi beder dig angive på denne skala, hvor godt eller dårligt, du mener, dit eget helbred er i dag. Angiv, dette ved at flytte den grønne plet, så den viser, hvor god eller dårlig din helbredstilstand er i dag.
+            </p>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row" style="margin-top: 150px;">
+        <div class="col-sm-2">
+            <p>Værst tænkelige helbredstilstand</p>
+        </div>
+        <div class="col-sm-6 container-slider">
+            <input type="text" id="foo" class="span2" value="11" data-slider-min="0" data-slider-max="100"
+                   data-slider-step="1" data-slider-value="10" data-slider-orientation="horizontal"
+                   data-slider-selection="after" data-slider-tooltip="hide" style="width: 100%"
+                   name="question[20][58][response]">
+        </div>
+        <div class="col-sm-2 indicator-slider">
+            <p>11%</p>
+        </div>
+        <div class="col-sm-2">
+            <p>Bedst tænkelige helbredstilstand</p>
+        </div>
+    </div>
+
+
+</div>
+<!-- /container -->
+
+<script src="{{@ROOT}}/3rdparty/bootstrap-slider/js/bootstrap-slider.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        hideBtnOnVideo();
+        $('#foo').slider()
+                .on('slide', function (ev) {
+                    $('.indicator-slider p').html(ev.value + '%');
+                    showBtnOnVideo();
+                });
+    });
+
+</script>

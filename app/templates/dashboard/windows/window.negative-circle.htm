@@ -1,0 +1,210 @@
+<link href="{{ @ROOT }}/assets/css/negative_circle.css" rel="stylesheet" type="text/css"/>
+<style>
+    .tooltip-inner {
+        background-color: white;
+        color: #000000;
+        border: 1px solid;
+    }
+</style>
+
+<div class="modal fade" id="ModalNegativeCircle" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" style="width: 800px;">
+        <div class="modal-content">
+            <div class="MoveableContainer pos0 visNONE">
+                <div id="S1_NC_TBSit">
+                    <div class="TB-Header">Situation <a class="help help-pos0" href="javascript:void(0)"></a></div>
+                    <textarea class="TextFeild_Drk" name="textPos0"></textarea>
+                    <br>
+
+                    <div class="S1_NC_TBButtons visNONE">
+                        <a href="javascript:void(0)" class="NCB-close">FORTRYD</a>
+                        <a href="javascript:void(0)" class="NCB-tick" onclick="nextStep1(true)">FÆRDIG</a>
+                    </div>
+                </div>
+                <div class="tooltip-help-pos0"
+                     data-toggle="tooltip" data-html="true"
+                     data-original-title="Tænk på en bestemt situation,som du har haft for nylig, hvor du var særlig
+                                            trist. Beskriv situationen kort. Klik inde i tekstfeldtet for at starte med at skrive."
+                     data-placement="bottom"></div>
+                <div id="S1_NC_SitBottom"></div>
+            </div>
+
+            <div id="NC_BG">
+                <div class="Circle BC_BG_Stage0">
+                    <div id="NC_StartButtonloc">
+                        <a class="NC_StartBut RadCornAll" href="javascript:void(0)" onclick="nextStep0()"
+                           data-toggle="tooltip" data-html="true"
+                           data-original-title="Klik på ‘START’ for<br> at komme igang<br>  med at udfylde din<br>  negative cirkel."
+                           data-placement="top">START</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="MoveableContainer pos1 visNONE">
+                <div class="S1_NC_TB">
+                    <div class="NC-Header">Negative tanker <a class="help help-pos1" href="javascript:void(0)"></a>
+                    </div>
+                    <textarea class="TextFeild" name="textPos1"></textarea>
+
+                    <div class="tooltip-help-pos1"
+                         data-toggle="tooltip" data-html="true"
+                         data-original-title="Hvilke tanker havde du i situationen, som gjorde dig særlig trist? Eller hvilke
+                                                billeder så du for dit indre blik? Hvad var det værste du tænkte eller forestillede dig?"
+                         data-placement="bottom"></div>
+                    <div class="S1_NC_TBButtons visNONE">
+                        <a href="javascript:void(0)" class="NCB-close">FORTRYD</a>
+                        <a href="javascript:void(0)" class="NCB-tick" onclick="nextStep2(true)">FÆRDIG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="MoveableContainer pos2 visNONE" style="width: 400px;">
+                <div class="S1_NC_TB">
+                    <div class="NC-Header">Følelser og kropslige reaktioner <a class="help help-pos2"
+                                                                               href="javascript:void(0)"></a></div>
+                    <textarea class="TextFeild" name="textPos2"></textarea>
+
+                    <div class="tooltip-help-pos2"
+                         data-toggle="tooltip" data-html="true"
+                         data-original-title="Hvad følte du? Var du trist, angst eller vred? Hvad skete der i din krop?
+                                                Følte du f.eks. uro?"
+                         data-placement="right"></div>
+                    <div class="S1_NC_TBButtons">
+                        <a href="javascript:void(0)" class="NCB-close">FORTRYD</a>
+                        <a href="javascript:void(0)" class="NCB-tick" onclick="nextStep3(true)">FÆRDIG</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="MoveableContainer pos3 visNONE">
+                <div class="S1_NC_TB">
+                    <div class="NC-Header">Adfærd<a class="help help-pos3" href="javascript:void(0)"></a></div>
+                    <textarea class="TextFeild" name="textPos3"></textarea>
+
+                    <div class="tooltip-help-pos3"
+                         data-toggle="tooltip" data-html="true"
+                         data-original-title="Hvad gjorde du i situationen? Hvis du ikke gjorde noget og måske var passiv,
+                                                skal du også skrive det."
+                         data-placement="bottom"></div>
+
+                    <div class="S1_NC_TBButtons">
+                        <a href="javascript:void(0)" class="NCB-close">FORTRYD</a>
+                        <a href="javascript:void(0)" class="NCB-tick" onclick="nextStepEnd(true)">FÆRDIG</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+
+    // Tooltip Help
+    $('.NC_StartBut').tooltip();
+    $('.help-pos0').click(function () {
+        $('.tooltip-help-pos0').tooltip('toggle');
+    });
+    $('.help-pos1').click(function () {
+        $('.tooltip-help-pos1').tooltip('toggle');
+    });
+    $('.help-pos2').click(function () {
+        $('.tooltip-help-pos2').tooltip('toggle');
+    });
+    $('.help-pos3').click(function () {
+        $('.tooltip-help-pos3').tooltip('toggle');
+    });
+    // End Tooltip Help
+
+    // Steps
+    function nextStep0() {
+        $('.NC_StartBut').hide();
+        $('.pos0').show();
+    }
+    function nextStep1(save) {
+        $('.pos0 .S1_NC_TBButtons').hide();
+        $('.pos0 textarea').attr('readonly', 'readonly');
+        $('.Circle').removeClass('BC_BG_Stage0').addClass('BC_BG_Stage1');
+        $('.pos1').show();
+        if ( save ) { saveText(0, $('.pos0 textarea').val()); }
+    }
+    function nextStep2(save) {
+        $('.pos1 .S1_NC_TBButtons').hide();
+        $('.pos1 textarea').attr('readonly', 'readonly');
+        $('.Circle').removeClass('BC_BG_Stage1').addClass('BC_BG_Stage3');
+        $('.pos2').show();
+        if ( save ) { saveText(1, $('.pos1 textarea').val()); }
+    }
+    function nextStep3(save) {
+        $('.pos2 .S1_NC_TBButtons').hide();
+        $('.pos2 textarea').attr('readonly', 'readonly');
+        $('.Circle').removeClass('BC_BG_Stage3').addClass('BC_BG_Stage5');
+        $('.pos3').show();
+        if ( save ) { saveText(2, $('.pos2 textarea').val()); }
+    }
+    function nextStepEnd(save) {
+        $('.pos3 .S1_NC_TBButtons').hide();
+        $('.pos3 textarea').attr('readonly', 'readonly');
+        $('.Circle').removeClass('BC_BG_Stage5').addClass('BC_BG_Stage6');
+        if ( save ) { saveText(3, $('.pos3 textarea').val()); }
+    }
+    // End Steps
+
+    function saveText(step, text) {
+        $.ajax({
+            url: "{{ @ROOT }}/window/al/update",
+            type: 'POST',
+            dataType: 'json',
+            async: false,
+            data: { step: step, text: text },
+            success: function (data) {
+                if (data.status == 'success') {
+                    console.log('step saved');
+                }
+            }
+        });
+    }
+
+    // Common methods
+    $('textarea').focusin(function () {
+        if (!$(this).attr('readonly'))
+            $(this).parent().children('.S1_NC_TBButtons').show();
+    });
+    $('.NCB-close').click(function () {
+        $(this).parent().parent().children('.TextFeild').val('');
+        $(this).parent().hide();
+    });
+
+</script>
+
+<script>
+
+    $(document).ready(function () {
+
+        setTimeout( function(){
+        // Loader
+        <repeat  group="{{ @nc }}" value="{{ @i }}">
+             <check if="{{ @i->step == 0}}">
+                    nextStep0();
+                    nextStep1(false);
+                    $('textarea[name=textPos0]').val("{{@i->text}}");
+            </check>
+            <check if="{{ @i->step == 1}}">
+                    nextStep2(false);
+                    $('textarea[name=textPos1]').val("{{@i->text}}");
+            </check>
+            <check if="{{ @i->step == 2}}">
+                    nextStep3(false);
+                    $('textarea[name=textPos2]').val("{{@i->text}}");
+            </check>
+            <check if="{{ @i->step == 3}}">
+                    nextStepEnd(false);
+                    $('textarea[name=textPos3]').val("{{@i->text}}");
+            </check>
+        </repeat>
+        // End Loader
+        },100);
+
+    });
+
+</script>

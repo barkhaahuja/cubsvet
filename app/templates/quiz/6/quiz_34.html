@@ -1,0 +1,151 @@
+<input name="quiz_id" type="hidden"
+       value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="35">
+
+<div class="container">
+
+    <h3>Besvar venligst ENTEN 31 ELLER 32 (ikke begge dele)</h3>
+
+    <h2>31. Vægttab i løbet af de sidste to uger</h2>
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[36][answer_id]) and @DATA.question[36][answer_id]== 123}}">
+                        <input type="radio" name="question[36][answer_id]" value="123" checked="checked">
+                        <false><input type="radio" name="question[36][answer_id]" value="123"></false>
+                    </check>
+                    Min vægt har ikke ændret sig.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[36][answer_id]) and @DATA.question[36][answer_id]== 124}}">
+                        <input type="radio" name="question[36][answer_id]" value="124" checked="checked">
+                        <false><input type="radio" name="question[36][answer_id]" value="124"></false>
+                    </check>
+                    Det føles, som om jeg har tabt mig en smule.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[36][answer_id]) and @DATA.question[36][answer_id]== 125}}">
+                        <input type="radio" name="question[36][answer_id]" value="125" checked="checked">
+                        <false><input type="radio" name="question[36][answer_id]" value="125"></false>
+                    </check>
+                    Jeg har tabt mig 1 kg eller mere.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[36][answer_id]) and @DATA.question[36][answer_id]== 126}}">
+                        <input type="radio" name="question[36][answer_id]" value="126" checked="checked">
+                        <false><input type="radio" name="question[36][answer_id]" value="126"></false>
+                    </check>
+                    Jeg har tabt mig 2 1⁄2 kg eller mere.
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+    <h2>32. Vægtøgning løbet af de sidste to uger</h2>
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[37][answer_id]) and @DATA.question[37][answer_id]== 127}}">
+                        <input type="radio" name="question[37][answer_id]" value="127" checked="checked">
+                        <false><input type="radio" name="question[37][answer_id]" value="127"></false>
+                    </check>
+                    Min vægt har ikke ændret sig.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[37][answer_id]) and @DATA.question[37][answer_id]== 128}}">
+                        <input type="radio" name="question[37][answer_id]" value="128" checked="checked">
+                        <false><input type="radio" name="question[37][answer_id]" value="128"></false>
+                    </check>
+                    Det føles, som om jeg har taget en smule på.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[37][answer_id]) and @DATA.question[37][answer_id]== 129}}">
+                        <input type="radio" name="question[37][answer_id]" value="129" checked="checked">
+                        <false><input type="radio" name="question[37][answer_id]" value="129"></false>
+                    </check>
+                    Jeg har taget 1 kg eller mere på.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[37][answer_id]) and @DATA.question[37][answer_id]== 130}}">
+                        <input type="radio" name="question[37][answer_id]" value="130" checked="checked">
+                        <false><input type="radio" name="question[37][answer_id]" value="130"></false>
+                    </check>
+                    Jeg har taget 2 1⁄2 kg eller mere på.
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!-- /container -->
+<script type="application/javascript">
+    $(document).ready(function () {
+        $("input[name='question[36][answer_id]']").click(function () {
+            $("input[name='question[37][answer_id]']").removeAttr("checked");
+        });
+
+        $("input[name='question[37][answer_id]']").click(function () {
+            $("input[name='question[36][answer_id]']").removeAttr("checked");
+        });
+    });
+</script>

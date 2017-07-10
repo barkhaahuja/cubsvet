@@ -1,0 +1,55 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="16">
+
+    <h2>13. Smerter/ubehag</h2>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[17][answer_id]) and @DATA.question[17][answer_id]== 52}}">
+                          <input type="radio" name="question[17][answer_id]" value="52" checked="checked">
+                          <false><input type="radio" name="question[17][answer_id]" value="52"></false>
+                    </check>
+                    Jeg har ingen smerter eller ubehag
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[17][answer_id]) and @DATA.question[17][answer_id]== 53}}">
+                          <input type="radio" name="question[17][answer_id]" value="53" checked="checked">
+                          <false><input type="radio" name="question[17][answer_id]" value="53"></false>
+                    </check>
+                    Jeg har moderate smerter eller ubehag
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[17][answer_id]) and @DATA.question[17][answer_id]== 54}}">
+                          <input type="radio" name="question[17][answer_id]" value="54" checked="checked">
+                          <false><input type="radio" name="question[17][answer_id]" value="54"></false>
+                    </check>
+                    Jeg har ekstreme smerter eller ubehag
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->

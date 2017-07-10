@@ -1,0 +1,597 @@
+<link href="{{ @ROOT }}/assets/css/window.css" rel="stylesheet" type="text/css"/>
+<link href="{{@ROOT}}/3rdparty/bootstrap-slider/css/slider.css" rel="stylesheet" type="text/css"/>
+<link href="{{ @ROOT }}/assets/css/NATneg_circle.css" rel="stylesheet" type="text/css"/>
+<script src="{{@ROOT}}/3rdparty/jquery/jquery-1.10.min.js"></script>
+<script src="{{@ROOT}}/3rdparty/bootstrap/js/bootstrap.custom.min.js"></script>
+<script src="{{@ROOT}}/3rdparty/bootstrap-slider/js/bootstrap-slider.js"></script>
+
+<style>
+    .nat_heading .popover{
+        background-color: #000;
+        color: #fff;
+    }
+    .nat_heading .popover.bottom .arrow:after{
+        border-bottom-color: #000;
+    }
+    .pos1 .S1_NC_TB .tooltip.left {
+        top: 46px !important;
+        left: -200px !important;
+    }
+    .pos2 .S1_NC_TB .tooltip.left {
+        top: 39px !important;
+        left: -203px !important;
+    }
+    .pos3 .S1_NC_TB .tooltip.left {
+        top: 36px !important;
+        left: -174px !important;
+    }
+    .pos3 .S1_NC_TB .tooltip .tooltip-inner {
+        max-width: 175px;
+    }
+    .pos4 .S1_NC_TB .tooltip.left{
+        top: 0 !important;
+        left: -185px !important;
+    }
+    
+</style>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalNATWidget" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content shadow window" id="container" style="width:1200px; height:720px; margin:auto; border:1px solid #000; background-color: #F5F5F6;">
+
+            <div class="natnegcircl" style="display:block; ">
+
+                <header class="nat_header">
+                    <nav class="nat_menu">
+                        <ul>
+                            <li class="nat_menu_1">
+                                <check if="{{ @dashbrd == 1 }}">
+                                    <a href="javascript:void(0)" class="natregtab">
+                                        <i></i>
+                                        Registering
+                                    </a>
+                                <false>                                    
+                                        <i></i>
+                                        <span style="color: #797979; font-size: 15px; line-height: 28px;">Registering</span>
+                                </false>
+                                </check>
+                            </li>
+                            <li class="nat_menu_two_2 active_2">
+                                <a href="javascript:void(0)">
+                                    <i></i>
+                                    Den negative cirkel
+                                </a>
+                            </li>     
+                            <check if="{{ (@currentStep > 5) AND (@dashbrd == 1)}}">
+                                <li class="nat_menu_3">
+                                    <a href="javascript:void(0)" class="natchlgtab">
+                                        <i></i>
+                                        Udfordring
+                                    </a>
+                                </li>
+                            </check>
+                        </ul>
+                    </nav>
+                    <div class="negcommentBox" style="display:block;">
+                        <i class="top_icon"></i>
+                        <div class="negcomment_matter">
+                            <p>
+                                Klik her for at komme igang med at arbejde med en af dine negative tanker, i den negative cirkel.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="nat_heading">
+                        <h2>Negative automatiske tanker - Den negative cirkel</h2>
+                        <i class="q_Mark">Questen</i>
+                        <a href="javascript:void(0);" data-dismiss="modal">
+                            <i class="c_Mark">close</i>
+                        </a>
+                    </div>
+                </header>
+                <section class="nat_contant" style="display:none;">
+                    <div id="popup">
+                        <div class="popup_top">
+                            <p>Du kan vælge en af dine allerede registrerede negative tanker fra listen, eller arbejde fra
+                                bunden med en helt ny ved at klikke på TILFØJ NY</p>
+                        </div>
+                        <div class="popup_cenetr">
+
+                        </div>
+                        <div class="scroll_bar_bottom">                            
+                            <div class="addnewnegtht">
+                                <img src="{{ @ROOT }}/assets/img/plus_icon.png" />TILFØJ NY
+                            </div>                            
+                        </div>
+                    </div>
+                </section>
+
+                <div class="DropShaddowDOWN"></div>
+
+                <!--Negative Circle start-->
+
+                <div class="negcircle" style="display:block;">
+                    
+                    <repeat group="{{ @natnegcic }}" value="{{ @negcirc }}">
+                    
+                        <check if="{{@negcirc.step == 0}}">
+                    <div class="MoveableContainer pos0 visNONE">
+                        <div id="S1_NC_TBSit">
+                            <div class="TB-Header">Situation <a class="help help-pos0" data-toggle="tooltip" href="javascript:void(0)"></a></div>
+                            <textarea class="TextFeild_Drk" name="textPos0">{{@negcirc.text}}</textarea>
+
+                            <div class="tooltip-help-pos0 tooltip_TB_1" data-toggle="tooltip" data-html="true"
+                                 data-original-title="<p>I hvilken situation havde du disse tanker? Beskriv situationen kort.</p>
+                                 <p>Klik i tekstfeltet for at begynde at skrive.</p>"
+                                 data-placement="left"></div>
+
+                            <div class="S1_NC_TBButtons visNONE">
+                                <a href="javascript:void(0)" class="NCB-close">FORTRYD</a>
+                                <a href="javascript:void(0)" class="NCB-tick-drk" onclick="nextStep1(true)">NÆSTE</a>
+                            </div>
+                        </div>
+
+                        <div id="S1_NC_SitBottom"></div>
+                    </div>
+                        </check>
+                        
+                        <check if="{{@negcirc.step == 4}}">
+
+                    <div id="NC_BG" style="z-index:1;">
+                        <div class="Circle BC_BG_Stage8">
+                            <a href="javascript:void(0)" class="qstnspot"></a>  
+                            <div class="negative_circle" style="display:none;">
+                                <div class="negative_box">
+                                    <div class="topbox">
+                                        Hvad taler for, at dine tanker er<br/>rigtige?<br/><br/>
+                                        Hvad taler imod, at dine tanker er rigtige? <br/><br/>
+                                        Er der andre måder at forstå situationen på? <br/><br/>
+                                        Hvordan vil du have set på 
+                                        situationen, før du blev deprimeret? <br/><br/>
+                                        Hvad ville din bedste ven tænke i den situation? <br/><br/>
+                                        Hvilke konsekvenser har det, hvis dine tanker er rigtige? <br/><br/>
+                                    </div>
+                                    <div class="downbox">
+                                        <a href="javascript:void(0)" class="button">LUK</a>
+                                    </div>
+                                </div>
+                                <div class="roundbox">
+                                    <i>icon</i>
+                                </div>
+                            </div>                        
+                        </div>
+                    </div>
+                            
+                            </check>
+                        
+                        <check if="{{@negcirc.step == 1}}">
+                    <div class="MoveableContainer pos1">
+                        <div class="S1_NC_TB">
+                            <div class="NC-Header">Negative tanker <a class="help help-pos1" href="javascript:void(0)"></a></div>
+                            <textarea class="TextFeild" name="textPos1">{{@negcirc.text}}</textarea>
+
+                            <div class="tooltip-help-pos1 tooltip_TB_2"
+                                 data-toggle="tooltip" data-html="true"
+                                 data-original-title="Vis i procent på en skala fra 0-100%, hvor meget du troede på tankerne, da de fór
+                                 gennem hovedet på dig. Hvis du vil angive 0% kan du bare klikke NÆSTE." data-placement="left"></div>
+
+                            <div class="EventSlider EventSliderRight" id="circnegtht" style="display: inline;"> 
+                                <div class="slider-container" style="float:left">
+                                    <input type="text" class="slider-percent" data-slider-min="0" data-slider-max="99"
+                                           data-slider-step="1" data-slider-value="{{@negcirc.sldval}}" data-slider-orientation="horizontal"
+                                           data-slider-selection="after" data-slider-tooltip="hide">
+                                </div>
+                                <div class="slider-indicator" id="negthtperc" style="display: inline; float:right; position:relative;">{{@negcirc.sldval}}%</div>
+                            </div>
+
+                            <div class="S1_NC_TBButtons visNONE">
+                                <a href="javascript:void(0)" class="NCB-prev">TILBAGE</a>
+                                <a href="javascript:void(0)" class="NCB-tick" onclick="nextStep2(true)">NÆSTE</a>
+                            </div>
+                        </div>
+                    </div>
+                            </check>
+                        
+                        <check if="{{@negcirc.step == 2}}">
+                    <div class="MoveableContainer pos2" style="width: 400px;">
+                        <div class="S1_NC_TB">
+                            <div class="NC-Header">Følelser og kropslige reaktioner <a class="help help-pos2" href="javascript:void(0)"></a></div>
+                            <textarea class="TextFeild" name="textPos2">{{@negcirc.text}}</textarea>
+
+                            <div class="tooltip-help-pos2"
+                                 data-toggle="tooltip" data-html="true"
+                                 data-original-title="<p>Beskriv dine følelser og kropslige reaktioner i cirklen. Det kan være følelser som tristhed, vrede og nervøsitet.</p>
+                                 <p>Vis følelsernes styrke på en skala fra 0-100%.</p>"  data-placement="left"></div>
+
+                            <div class="EventSlider EventSliderRight" id="circresp" style="display: inline;">     
+                                <div class="slider-container" style="float:left">
+                                    <input type="text" class="slider-percent2" data-slider-min="0" data-slider-max="99"
+                                           data-slider-step="1" data-slider-value="{{@negcirc.sldval}}" data-slider-orientation="horizontal"
+                                           data-slider-selection="after" data-slider-tooltip="hide">
+                                </div>
+                                <div class="slider-indicator" id="sldindresp" style="display: inline; float:right; position:relative;">{{@negcirc.sldval}}%</div>
+                            </div>
+
+                            <div class="S1_NC_TBButtons visNONE">
+                                <a href="javascript:void(0)" class="NCB-prev">TILBAGE</a>
+                                <a href="javascript:void(0)" class="NCB-tick" onclick="nextStep3(true)">NÆSTE</a>
+                            </div>
+                        </div>
+                    </div>
+                        </check>
+
+                        <check if="{{@negcirc.step == 3}}">
+                    <div class="MoveableContainer pos3">
+                        <div class="S1_NC_TB">
+                            <div class="NC-Header">Adfærd<a class="help help-pos3" href="javascript:void(0)"></a></div>
+                            <textarea class="TextFeild" name="textPos3">{{@negcirc.text}}</textarea>
+
+                            <div class="tooltip-help-pos3"
+                                 data-toggle="tooltip" data-html="true"
+                                 data-original-title="<p>Hvad gjorde du i situationen? Beskriv det kort.</p>
+                                 <p>Klik i tekstfeltet for at begynde at skrive.</p>" data-placement="left"></div>
+
+                            <div class="S1_NC_TBButtons visNONE">
+                                <a href="javascript:void(0)" class="NCB-prev">TILBAGE</a>
+                                <a href="javascript:void(0)" class="NCB-tick" onclick="nextStep4(true)">NÆSTE</a>
+                            </div>
+                        </div>
+                    </div>
+                        </check>
+                        
+                        <check if="{{@negcirc.step == 4}}">
+                    <div class="MoveableContainer pos4">
+                        <div class="S1_NC_TB">
+                            <div class="NC-Header">Alternative tanker<a class="help help-pos4" href="javascript:void(0)"></a></div>
+                            <textarea class="TextFeild" name="textPos4">{{@negcirc.text}}</textarea>
+
+                            <div class="tooltip-help-pos4"
+                                 data-toggle="tooltip" data-html="true"
+                                 data-original-title="<p>Prøv at finde alternative tanker til dine negative tanker.</p>
+                                 <p>Klik på det store spørgsmålstegn i cirklen og brug de spørgsmål der bliver vist, til at bekæmpe dine negative
+                                 tanker.</p>" data-placement="left"></div>
+
+                            <div class="EventSlider EventSliderRight" id="circalttht" style="display: inline;"> 
+                                <div class="slider-container" style="float:left">
+                                    <input type="text" class="slider-percent3" data-slider-min="0" data-slider-max="99"
+                                           data-slider-step="1" data-slider-value="{{@negcirc.sldval}}" data-slider-orientation="horizontal"
+                                           data-slider-selection="after" data-slider-tooltip="hide">
+                                </div>
+                                <div class="slider-indicator" id="sldalttht" style="display: inline; float:right; position:relative;">{{@negcirc.sldval}}%</div>
+                            </div>
+
+                            <div class="S1_NC_TBButtons visNONE">
+                                <a href="javascript:void(0)" class="NCB-prev">TILBAGE</a>
+                                <a href="javascript:void(0)" class="NCB-tick" onclick="nextStepEnd(true)">FÆRDIG</a>
+                            </div>
+                        </div>
+                    </div>     
+                            </check>
+                    
+                    
+                        
+                    </repeat>
+                    
+                    <div class="MoveableContainer complPos5 visNONE">
+                        <div class="S1_NC_TB" style="border: 2px solid #0E0E0E; width: 221px;">
+                            <div class="lftboxtxt">
+                                Godt gået. Du har brudt den
+                                negative cirkel med din alternative
+                                tanke. Du kan nu gå videre
+                                til næste kapittel. Denne øvelse
+                                er nu blevet tilgængelig på dit
+                                arbejdsbord. Den er inkluderet i
+                                værktøjet Negative Automatiske
+                                Tanker.
+                            </div>
+
+                            <div class="lftboxbtnctr">
+                                <div class="lftboxbtn">FORTSÆT</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>  
+
+                <!-- Negative Circle end -->
+
+            </div>                     
+            
+
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+<div id="PE-HelpContentNATReg" class="popover bottom">
+    <div class="title">Negative automatiske tanker</div>
+    <p>Her kan du arbejde i dybden og udfordre nogle af de negative tanker du tidligere har registreret. 
+       Du kan også arbejde med en helt ny negativ tanke. Klik på TILFØJ NY for at komme igang.</p>
+    <p>Klik på ÅBN for at bruge redskabet.</p>
+</div>
+
+<script> 
+
+    $('.nat_contant').hide();  
+    $('tilf_negcircle').hide();
+    $('.complPos5').hide(); 
+    
+    // modal help
+    $('.q_Mark').popover({
+        content: $('#PE-HelpContentNATReg').html(),
+        html: true,
+        placement: 'bottom',
+        trigger: 'click'
+    });    
+
+    $(document).ready(function() {
+        
+        nextStep0();
+                
+        //$('.negcommentBox').show();
+
+        $('.help-pos0').click(function() {
+            $('.tooltip-help-pos0').tooltip('toggle');
+        });
+        $('.help-pos1').click(function() {
+            $('.tooltip-help-pos1').tooltip('toggle');
+        });
+        $('.help-pos2').click(function() {
+           $('.tooltip-help-pos2').tooltip('toggle');
+        });
+        $('.help-pos3').click(function() {
+            $('.tooltip-help-pos3').tooltip('toggle');
+        });
+        $('.help-pos4').click(function() {
+            $('.tooltip-help-pos4').tooltip('toggle');
+        });
+        // End Tooltip Help
+
+        //Question mark drop down
+        $('.qstnspot').click(function() {
+            $('.negative_circle').toggle();
+        });
+
+        $('.roundbox').click(function() {
+            $('.negative_circle').hide();
+        });
+
+        $('.downbox').click(function() {
+            $('.negative_circle').hide();
+            //$('.complPos5').show();
+        });
+
+        $('.lftboxbtn').click(function() {
+            $('#ModalNATWidget').modal('hide');
+        });
+
+    });
+
+    $("li.active_2").mouseover(function() {
+        $('.negcommentBox').hide();
+    });
+
+    $("li.active_2").mouseout(function() {
+        $('.negcommentBox').hide();        
+    });
+
+    // Steps
+    function nextStep0() {
+        $('.negcommentBox').hide();
+        $('.nat_contant').hide();
+        if ($('.negthtlist').css('display') == 'block') {
+            $(".negthtlist").css('display', null);
+        }
+        $('.pos0 .S1_NC_TBButtons').show();
+        $('.pos1').show();
+        $('#circnegtht').show();
+        $('.pos1 .S1_NC_TBButtons').hide();
+        $('.pos1 textarea').attr('readonly', 'readonly');       
+
+        $('.tooltip-help-pos0').tooltip('show');
+
+        window.setTimeout(function() {
+            $('.tooltip')
+                    .css({'top': '25px', 'left': '-208.5px'});
+            
+            $('.tooltip').addClass('in');
+        }, 1);
+    }
+    function nextStep1(save) { 
+      if( $('.pos0 textarea').val() !=''){
+        $('.negcommentBox').hide();
+        $('.pos0 .S1_NC_TBButtons').hide();
+        $('.pos0 textarea').attr('readonly', 'readonly');
+        $('.pos1 .S1_NC_TBButtons').show();
+        $('#circnegtht').show();
+        $('.tooltip-help-pos0').tooltip('hide');
+        $('.tooltip-help-pos1').tooltip('show');
+        if (save) {
+            saveText(0, $('.pos0 textarea').val(), 0, 0);
+        }
+      }
+    }
+    function nextStep2(save) {
+        if( $('.pos1 textarea').val() !=''){
+        $('.negcommentBox').hide();
+        $('.pos1 .S1_NC_TBButtons').hide();
+        $('.pos1 textarea').attr('readonly', 'readonly');
+        $('#circnegtht').show();
+        $('.pos2').show();
+        $('.tooltip-help-pos2').tooltip('show');
+        if (save) {
+            saveText(1, $('.pos1 textarea').val(), $('.slider-percent').val(), 0);
+        }
+       }
+    }
+    function nextStep3(save) {
+       if( $('.pos2 textarea').val() !=''){
+        $('.negcommentBox').hide();
+        $('.pos2 .S1_NC_TBButtons').hide();
+        $('.pos2 textarea').attr('readonly', 'readonly');
+        $('.pos3').show();
+        $('#circresp').show();
+        $('.tooltip-help-pos2').tooltip('hide');
+        $('.tooltip-help-pos3').tooltip('show');
+        if (save) {
+            saveText(2, $('.pos2 textarea').val(), $('.slider-percent2').val(), 0);
+        }
+       } 
+    }
+    function nextStep4(save) {
+       if( $('.pos3 textarea').val() !=''){
+        $('.negcommentBox').hide();
+        $('.pos3 .S1_NC_TBButtons').hide();
+        $('.pos3 textarea').attr('readonly', 'readonly');
+        $('.tooltip-help-pos3').tooltip('hide');
+        
+        setTimeout(function() {
+            $('.qstnspot').show()
+        }, 1100);
+        setTimeout(function() {
+            $('.pos4').show()
+        }, 1500);
+        $('#circalttht').show();
+        if (save) {
+            saveText(3, $('.pos3 textarea').val(), 0, 0);
+        }
+       } 
+    }
+    function nextStepEnd(save) {
+        if( $('.pos4 textarea').val() !=''){
+        $('.negcommentBox').hide();
+        $('.pos4 .S1_NC_TBButtons').hide();
+        $('.pos4 textarea').attr('readonly', 'readonly');
+        //$('.Circle').removeClass('BC_BG_Stage7').addClass('BC_BG_Stage8');
+        $('.qstnspot').show();
+        $('.complPos5').show();
+        if ($('.negative_circle').css('display') == 'block') {
+            $('.negative_circle').hide();            
+        }
+        if (save) {
+            saveText(4, $('.pos4 textarea').val(), $('.slider-percent3').val(), 0);
+        }
+       } 
+    }    
+        // End Steps
+
+    function saveText(step, text, slider_val, newnegtht) { 
+        var negthid=0;
+        <check if="{{isset(@negthtid) && @negthtid != ''}}">
+         negthid="{{@negthtid}}";
+        </check>
+        $.ajax({
+            url: "{{ @ROOT }}/window/nat/negcircle/updatenegcirc",
+            type: 'POST',
+            dataType: 'json',
+            async: false,
+            data: { step: step, text: text, slider_val: slider_val, negthid: negthid },
+            success: function(data) {
+                if (data.status == 'success') {
+                    
+                }
+            }
+        });
+    }
+
+    // Common methods
+    $('textarea').focusin(function() {
+        $('.negcommentBox').hide();
+        $('.tooltip-help-pos1').tooltip('hide');
+        $('.tooltip-help-pos4').tooltip('hide');
+        if (!$(this).attr('readonly')){ 
+            $(this).parent().children('.S1_NC_TBButtons').show();
+        }
+    });
+
+    $('.NCB-close').click(function() {
+        $(this).parent().parent().children('.TextFeild').val('');
+        $(this).parent().hide();
+    });
+
+    // create & show slider
+    $('.slider-percent').slider().on('slide', function(ev) {
+        var type = $(this).parentsUntil(".EventLayout", ".EventSlider");
+        var sldperc = ev.value;
+        if(sldperc == 99){
+            sldperc = 100;
+        }
+        $('#negthtperc').html(sldperc + '%');
+    });
+
+    $('.slider-percent2').slider().on('slide', function(ev) {
+        var type = $(this).parentsUntil(".EventLayout", ".EventSlider");
+        var sldperc = ev.value;
+        if(sldperc == 99){
+            sldperc = 100;
+        }
+        $('#sldindresp').html(sldperc + '%');
+    });
+
+    $('.slider-percent3').slider().on('slide', function(ev) {
+        var type = $(this).parentsUntil(".EventLayout", ".EventSlider");
+        var sldperc = ev.value;
+        if(sldperc == 99){
+            sldperc = 100;
+        }
+        $('#sldalttht').html(sldperc + '%');
+    });  
+    
+
+
+    $(document).ready(function() {              
+        
+        $('.natregtab').click(function() {
+            $('#ModalNATWidget').modal('hide');
+            
+            setTimeout(function(){
+               $('#ContentNATRegister').load('{{@ROOT}}/window/nat/show?id={{ date("Ymdhis", time()) }}&dhbrd=1', function () {                
+                    $('#ModalNATWidget').modal('show');
+                    $('#ModalNATWidget').on('hidden.bs.modal', function (e) { 
+                        $(this).removeData('hidden.bs.modal').empty();
+                        $(document.body).removeClass('modal-open');
+                    });
+                }) 
+            }, 250);
+        });
+        
+        $('.natchlgtab').click(function() {
+            $('#ModalNATWidget').modal('hide');
+
+            setTimeout(function(){
+                $('#ContentNATRegister').load('{{@ROOT}}/window/nat/negativechallenge?id={{ date("Ymdhis", time()) }}&dhbrd=1', function () {
+                    $('#ModalNATWidget').modal('show');
+                    $('#ModalNATWidget').on('hidden.bs.modal', function (e) { 
+                        $(this).removeData('hidden.bs.modal').empty();
+                        $(document.body).removeClass('modal-open');
+                    });
+                }) 
+            }, 250);
+        });
+        
+        $('li.active_2').click(function() {
+            $('#ModalNATWidget').modal('hide');
+
+            setTimeout(function(){
+                    $('#ContentNATRegister').load('{{@ROOT}}/window/nat/negcircle?id={{ date("Ymdhis", time()) }}&dhbrd=1', function () {
+                        $('#ModalNATWidget').modal('show');
+                        $('#ModalNATWidget').on('hidden.bs.modal', function (e) { 
+                            $(this).removeData('hidden.bs.modal').empty();
+                            $(document.body).removeClass('modal-open');
+                        });
+                    }) 
+                }, 250);
+        });
+        
+    });    
+    
+    function compNegcircle(negid) {
+        
+    }   
+    
+    
+</script>

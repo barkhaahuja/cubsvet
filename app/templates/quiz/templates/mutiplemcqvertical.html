@@ -1,0 +1,44 @@
+<div class="container">
+ 
+    <h2>{{@question_title}}</h2>
+
+    <h4 class="text-muted">{{@question_subtitle}}</h4>
+
+<!--    below from here-->
+    <div class="divoptions">
+   
+    <repeat group="{{ @question_options }}" value="{{ @question_option }}">
+        
+        <div class="row">
+            <div class="col-sm-12">
+                <p>{{ @question_option->option_text }}</p>
+            </div>
+        </div>
+        
+        <repeat group="{{  explode('|',  @question_option->option_value )}}" value="{{ @semioption }}">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="{{ 'radio'. @question_option->id }}" value="{{@semioption}}">
+                                                {{@semioption }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </repeat>
+        
+
+        
+    <hr class="visible-xs">
+    <br/>
+    <br/>
+    
+    </repeat>
+    
+<!--    above form here-->
+  
+</div>
+</div>
+<!-- /container -->
+

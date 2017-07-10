@@ -1,0 +1,75 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="32">
+
+    <h2>27. Humør i forhold til tidspunktet på dagen</h2>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[32][answer_id]) and @DATA.question[32][answer_id]== 107}}">
+                        <input type="radio" name="question[32][answer_id]" value="107" checked="checked">
+                        <false><input type="radio" name="question[32][answer_id]" value="107"></false>
+                    </check>
+                    Der er ingen regelmæssig sammenhæng mellem mit humør og
+                    tidspunktet på dagen.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[32][answer_id]) and @DATA.question[32][answer_id]== 108}}">
+                        <input type="radio" name="question[32][answer_id]" value="108" checked="checked">
+                        <false><input type="radio" name="question[32][answer_id]" value="108"></false>
+                    </check>
+                    Mit humør hænger ofte sammen med tidspunktet på dagen på grund af
+                    ydre omstændigheder (f.eks. om jeg er alene eller arbejder).
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[32][answer_id]) and @DATA.question[32][answer_id]== 109}}">
+                        <input type="radio" name="question[32][answer_id]" value="109" checked="checked">
+                        <false><input type="radio" name="question[32][answer_id]" value="109"></false>
+                    </check>
+                    Mit humør hænger generelt mere sammen med selve tidspunktet på
+                    dagen end med ydre omstændigheder.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[32][answer_id]) and @DATA.question[32][answer_id]== 110}}">
+                        <input type="radio" name="question[32][answer_id]" value="110" checked="checked">
+                        <false><input type="radio" name="question[32][answer_id]" value="110"></false>
+                    </check>
+                    Mit humør er klart og forudsigeligt bedre eller værre på et
+                    bestemt tidspunkt på dagen.
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->

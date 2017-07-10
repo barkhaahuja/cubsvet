@@ -1,0 +1,90 @@
+<style>
+
+    table {
+        border-spacing: 10px;
+    }
+    table td {
+        vertical-align: top;
+    }
+    tbody tr {
+        width: 100%;
+        margin: 0 auto;
+    }
+    tbody td {
+        width: 400px;
+        height: auto;
+    }
+    tbody td i.dash_icon {
+        float: left;
+        height: 80px;
+        padding: 0 10px 0 0;
+    }
+    .dash_headding {
+        padding: 0 40px 0 0;
+    }
+    .mainTable {
+        border: 0; 
+        width: 100%;
+        margin: 0 auto;
+    }
+    .mainTable td p {
+        margin: 0;
+        padding: 0;
+    }
+    .dash_box {
+        padding: 30px;
+        height: 380px;
+        width: 75%;
+        margin: 0 auto;
+    }
+
+
+</style>
+
+
+<div id="DashboardContainer">
+
+    <div class="Dash-book-title">{{ @section_title }}</div>
+
+    <!--right section starts-->
+    <div id="Dash-right-MainBox" style="width: 100%">
+        <div class="dash_box">
+
+            <div class="dash_headding">Kontaktinformation</div>
+
+            <div style="font-size: 14px;margin-top: 20px;">
+
+                <table class="mainTable" cellspacing="20" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <i class="dash_icon">
+                                <img src="{{ @ROOT}}/assets/img/Contact-Icon-speach.png" width="30" height="30">
+                            </i>
+                            <p>Benyt beskedfunktionen til at sende en meddelelse til din psykolog</p>
+                        </td>
+                        <td style="vertical-align: top;">
+                            <i class="dash_icon">
+                                <img src="{{ @ROOT}}/assets/img/Contact-Icon-letter.png" width="30" height="30">
+                            </i>
+                            <p>Email<br>
+                            ipsyk@rsyd.dk</p>
+                        </td>
+                        <td style="vertical-align: top;">
+                            <i class="dash_icon">
+                                <img src="{{ @ROOT}}/assets/img/Contact-Icon-Phone.png" width="30" height="30">
+                            </i>
+                             <p>Du kan også kontakte os på telefon:<br/>
+                                 99 44 95 60</p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+    <!--right section ends-->
+
+</div>

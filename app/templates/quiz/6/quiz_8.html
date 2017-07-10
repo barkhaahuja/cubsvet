@@ -1,0 +1,108 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="9">
+
+    <h2>7. Misbrug</h2>
+
+    <h4 class="text-muted">Hvor mange genstande drikker du i gennemsnit pr. uge (ca. antal bedes angivet):</h4>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[10][answer_id]) and @DATA.question[10][answer_id]==28 }}">
+                        <input type="radio" name="question[10][answer_id]" value="28" checked="checked">
+                        <false><input type="radio" name="question[10][answer_id]" value="28"></false>
+                    </check>
+                    0 genstande (jeg drikker aldrig)
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[10][answer_id]) and @DATA.question[10][answer_id]==29 }}">
+                        <input type="radio" name="question[10][answer_id]" value="29" checked="checked">
+                        <false><input type="radio" name="question[10][answer_id]" value="29"></false>
+                    </check>
+                    0-5 genstande
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[10][answer_id]) and @DATA.question[10][answer_id]==30 }}">
+                        <input type="radio" name="question[10][answer_id]" value="30" checked="checked">
+                        <false><input type="radio" name="question[10][answer_id]" value="30"></false>
+                    </check>
+                    5-10 genstande
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[10][answer_id]) and @DATA.question[10][answer_id]==31 }}">
+                        <input type="radio" name="question[10][answer_id]" value="31" checked="checked">
+                        <false><input type="radio" name="question[10][answer_id]" value="31"></false>
+                    </check>
+                    10-20 genstande
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[10][answer_id]) and @DATA.question[10][answer_id]==32 }}">
+                        <input type="radio" name="question[10][answer_id]" value="32" checked="checked">
+                        <false><input type="radio" name="question[10][answer_id]" value="32"></false>
+                    </check>
+                    20-30 genstande
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[10][answer_id]) and @DATA.question[10][answer_id]==33 }}">
+                        <input type="radio" name="question[10][answer_id]" value="33" checked="checked">
+                        <false><input type="radio" name="question[10][answer_id]" value="33"></false>
+                    </check>
+                    Over 30 genstande
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->
+

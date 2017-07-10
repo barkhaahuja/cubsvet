@@ -1,0 +1,57 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="13">
+
+    <h2>10. Bevægelighed</h2>
+
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[14][answer_id]) and @DATA.question[14][answer_id]== 40}}">
+                          <input type="radio" name="question[14][answer_id]" value="40" checked="checked">
+                          <false><input type="radio" name="question[14][answer_id]" value="40"></false>
+                    </check>
+                    Jeg har ingen problemer med at gå omkring
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="radio">
+                <label>
+
+                    <check if="{{ isset(@DATA.question[14][answer_id]) and @DATA.question[14][answer_id]== 41}}">
+                          <input type="radio" name="question[14][answer_id]" value="41" checked="checked">
+                          <false><input type="radio" name="question[14][answer_id]" value="41"></false>
+                    </check>
+                    Jeg har nogle problemer med at gå omkring
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[14][answer_id]) and @DATA.question[14][answer_id]== 42}}">
+                          <input type="radio" name="question[14][answer_id]" value="42" checked="checked">
+                          <false><input type="radio" name="question[14][answer_id]" value="42"></false>
+                    </check>
+                    Jeg er bundet til sengen
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->
+

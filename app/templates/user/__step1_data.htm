@@ -1,0 +1,46 @@
+<h4>Negative Circle</h4>
+<table class="table table-striped table-hover table-bordered">
+    <tr>
+        <th>Section</th>
+        <th>Value</th>
+        <th>Date</th>
+    </tr>
+    <repeat group="{{@ncs }}" value="{{ @nc }}">
+        <tr>
+            <td>
+                <switch expr="{{ @nc.step }}">
+                    <case value="{{ 0 }}" break="{{ true }}">
+                        Situation
+                    </case>
+                    <case value="{{ 1 }}" break="{{ true }}">
+                        Negative tanker
+                    </case>
+                    <case value="{{2 }}" break="{{ true }}">
+                        Følelser og kropslige reaktioner
+                    </case>
+                    <case value="{{ 3 }}" break="{{ true }}">
+                        Adfærd
+                    </case>
+                </switch>
+            </td>
+            <td>{{ @nc.text }}</td>
+            <td>{{ @nc.date_modified }}</td>
+        </tr>
+    </repeat>
+</table>
+
+<h4>Positive Experience</h4>
+<table class="table table-striped table-hover table-bordered">
+    <tr>
+        <th style="width: 80%">Notes</th>
+        <th>Date</th>
+    </tr>
+    <repeat group="{{ @notes }}" value="{{ @note }}">
+        <tr>
+            <td>{{ @note.note }}</td>
+            <td>{{ @note.create_date }}</td>
+        </tr>
+    </repeat>
+</table>
+
+<include href="user/__problemgoal_data.htm"/>

@@ -1,0 +1,118 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+
+    <h2>{{@question_title}}</h2>
+
+    <h4 class="text-muted">{{@question_subtitle}}</h4>
+
+   
+    <div class="row">
+        <div class="col-sm-1">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="mainRadio" value="Ja" > 
+                                   Ja
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-1">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="mainRadio" value="Nej"  >
+                                        Nej
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="mainRadio" value="Ikke relevant" >
+                                        Ikke relevant
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="field-description">
+                <p>Hvis ja, noter venligst hvilken type på listen herunder:</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+   
+    <div class="divoptions">
+   
+    <repeat group="{{ @question_options }}" value="{{ @question_option }}">
+       
+        <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <input type="radio" name="option" value="{{@question_option->id}}">
+                                        {{ @question_option->option_text }}
+                </label>
+            </div>
+        </div>
+        <check if="{{@question_option->option_type==0}}">
+            <div class="col-sm-9">
+            <input type="text" name="{{'txt'.@question_option->id.'[]'}}" class="form-control" value="">
+            </div>
+        </check>
+        <check if="{{@question_option->option_type==1}}">
+            <div class="col-sm-4">
+            <input type="text"  name="{{'txt'.@question_option->id.'[]'}}"  class="form-control" value="">
+            </div>
+            <div class="col-sm-3">
+                <div class="field-description">
+                    <p>, og antal timer/ugen</p>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <input type="text" name="{{'txt'.@question_option->id.'[]'}}"  class="form-control" value="">
+            </div>
+        </check>
+        <check if="{{@question_option->option_type==2}}">
+            <div class="col-sm-9" style="margin-bottom: 10px">
+                <textarea  name="{{'txt'.@question_option->id.'[]'}}" class="form-control" rows="3"></textarea>
+            </div>
+        </check>
+       
+    </div>
+
+    <hr class="visible-xs">
+    
+    </repeat>
+    
+   
+</div>
+      
+
+</div>
+
+<script>
+    $(document).ready(function(){
+        
+        /*
+        $('#quizform input[name=mainRadio]').on('change', function() {
+           
+            $(".divoptions :input").prop('disabled', false);
+            $(".divoptions :input[type='text']").val('');
+            $('.divoptions textarea').val('');
+            $(".divoptions input[name=option]").prop('checked', false);
+            
+            var radioval = $('input[name=mainRadio]:checked', '#quizform').val(); 
+        
+            if(radioval != "yes")
+            {
+               // disable all inputs
+               $(".divoptions :input").prop('disabled', true);
+            }
+            else
+            {
+                $(".divoptions :input").prop('disabled', false);
+            }
+            
+        });
+        */
+         
+    });
+</script>

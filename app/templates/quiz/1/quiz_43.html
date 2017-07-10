@@ -1,0 +1,71 @@
+<input name="quiz_id" type="hidden"
+       value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="41">
+
+<div class="container">
+
+    <h2>38. Energiniveau</h2>
+
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[45][answer_id]) and @DATA.question[45][answer_id]== 151}}">
+                        <input type="radio" name="question[45][answer_id]" value="151" checked="checked">
+                        <false><input type="radio" name="question[45][answer_id]" value="151"></false>
+                    </check>
+                    Der er ingen ændring i forhold til mit sædvanlige energiniveau.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[45][answer_id]) and @DATA.question[45][answer_id]== 152}}">
+                        <input type="radio" name="question[45][answer_id]" value="152" checked="checked">
+                        <false><input type="radio" name="question[45][answer_id]" value="152"></false>
+                    </check>
+                    Jeg bliver hurtigere træt end normalt.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[45][answer_id]) and @DATA.question[45][answer_id]== 153}}">
+                        <input type="radio" name="question[45][answer_id]" value="153" checked="checked">
+                        <false><input type="radio" name="question[45][answer_id]" value="153"></false>
+                    </check>
+                    Jeg skal gøre mig store anstrengelser for at komme i gang med
+                    eller blive færdig med mine
+                    sædvanlige daglige aktiviteter (f.eks. købe ind, gøre husarbejde,
+                    lave mad eller gå på arbejde).
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[45][answer_id]) and @DATA.question[45][answer_id]== 154}}">
+                        <input type="radio" name="question[45][answer_id]" value="154" checked="checked">
+                        <false><input type="radio" name="question[45][answer_id]" value="154"></false>
+                    </check>
+                    Jeg er faktisk ikke i stand til at udføre de fleste af mine
+                    sædvanlige daglige aktiviteter, fordi jeg
+                    simpelthen ikke har energi til det.
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+
+</div>

@@ -1,0 +1,77 @@
+<input name="quiz_id" type="hidden"
+       value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="49">
+<div class="container">
+
+    <h2>46. Forstoppelse / diarré</h2>
+
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[53][answer_id]) and @DATA.question[53][answer_id]==183 }}">
+                        <input type="radio" name="question[53][answer_id]" value="183"
+                               checked="checked">
+                        <false><input type="radio" name="question[53][answer_id]"
+                                      value="183"></false>
+                    </check>
+                    Der er ingen ændring i mine sædvanlige afføringsvaner.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[53][answer_id]) and @DATA.question[53][answer_id]==184 }}">
+                        <input type="radio" name="question[53][answer_id]" value="184"
+                               checked="checked">
+                        <false><input type="radio" name="question[53][answer_id]"
+                                      value="184"></false>
+                    </check>
+                    Jeg har ind imellem forstoppelse eller diarré, men kun i let grad.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[53][answer_id]) and @DATA.question[53][answer_id]==185 }}">
+                        <input type="radio" name="question[53][answer_id]" value="185"
+                               checked="checked">
+                        <false><input type="radio" name="question[53][answer_id]"
+                                      value="185"></false>
+                    </check>
+                    Jeg har diarré eller forstoppelse det meste af tiden, men det har
+                    ingen indvirkning på min
+                    funktionsevne i det daglige.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[53][answer_id]) and @DATA.question[53][answer_id]==186 }}">
+                        <input type="radio" name="question[53][answer_id]" value="186"
+                               checked="checked">
+                        <false><input type="radio" name="question[53][answer_id]"
+                                      value="186"></false>
+                    </check>
+                    Jeg har forstoppelse eller diarré, som jeg tager medicin for eller,
+                    som går ud over mine daglige
+                    aktiviteter.
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+
+</div>

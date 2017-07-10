@@ -1,0 +1,130 @@
+<link href="{{@ROOT}}/assets/css/video-js.css" rel="stylesheet">
+<script src="{{@ROOT}}/assets/js/video.js"></script>
+
+<style>
+    .VideoContainer, #modalVideo .modal-body #video-summary {
+        height: 406px;
+        width: 720px;
+        margin: auto;
+        padding: 25px;
+        margin-top: 20px;
+    }
+
+    #modalVideo .modal-title {
+        font-size: 28px;
+    }
+
+    #modalVideo .modal-body {
+        background-color: #EFEFF0;
+        height: 480px;
+        overflow-y: auto;
+        padding-bottom: 20px;
+        padding-top: 5px;
+    }
+
+    #modalVideo .modal-footer {
+        margin-top: 0px;
+        border-top: none;
+    }
+
+/*    #modalVideo .vjs-default-skin .vjs-big-play-button {
+        width: 120px;
+        height: 120px;
+    }*/
+
+
+
+</style>
+
+<div id="DashboardContainer">
+
+    <div class="Dash-book-title">{{ @section_title }}</div>
+
+    <include href="dashboard/__menu.section.library.htm"/>
+
+    <!--right section starts-->
+    <div id="Dash-right-MainBox" class="Dash-right3pp">
+
+        <div style="padding: 30px;overflow-y: scroll;height: 380px;width: 540px">
+
+            <repeat group="{{ @library_videos }}" value="{{ @video }}">
+                <div id="Dash-Box-Right-3pp">
+                    <h2>Step <b>{{ @video.name }}</b></h2>
+                    <a data-toggle="modal" class="videoPreview" data-video="{{ @video.name }}"
+                       data-poster="{{@video.step}}">
+                        <div id="Dash-Thumbnail-3pp">
+                            <img src="{{@ROOT}}/assets/img/step{{@video.step}}.poster.png"
+                                 style="width: 116px;height: 64px;cursor: pointer;">
+                        </div>
+                        <p>Beskrivelse Lorem ipsum habitasse faucibus aliquam.</p>
+                    </a>
+                </div>
+            </repeat>
+
+        </div>
+
+    </div>
+    <!--right section ends-->
+
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalVideo" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" style="width: 1000px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <p class="modal-title">
+                    Video  titel
+                </p>
+            </div>
+            <div class="modal-body">
+                <video id="video-summary" class="video-js vjs-default-skin vjs-big-play-centered" controls
+                       preload="none" width="720" height="406" poster=""
+                       data-setup="{}">
+                    <source src="" type='video/mp4'/>
+                </video>
+            </div>
+            <div class="modal-footer">
+
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<script>
+    $(document).ready(function () {
+
+        $('.videoPreview').click(function () {
+
+            $('.modal-title').html('Video ' + $(this).data('video'));
+
+            var video = '{{@ROOT}}/app/data/videos/'+ $(this).data('video') + '.mp4';
+            var poster = '{{@ROOT}}/assets/img/step'+$(this).data('poster')+'.poster.png'  ;
+
+            $('#video-summary').attr('poster',poster);
+            $('#video-summary').children().attr('src',video);
+
+            videojs.options.flash.swf = "{{@ROOT}}/assets/swf/video-js.swf";
+            videojs("#video-summary").ready(function () {
+                this.autoplay(true) ;
+                this.on('ended', function () {
+                    $('#modalVideo').modal('hide');
+                });
+            });
+
+            $('#modalVideo').modal('show');
+
+        });
+
+        $('#modalVideo').on('hide.bs.modal', function (e) {
+            videojs("#video-summary").pause();
+        })
+
+
+    });
+</script>

@@ -1,0 +1,73 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="26">
+
+    <h2>21. Tendens til at vågne for tidligt</h2>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[26][answer_id]) and @DATA.question[26][answer_id]== 83}}">
+                          <input type="radio" name="question[26][answer_id]" value="83" checked="checked">
+                          <false><input type="radio" name="question[26][answer_id]" value="83"></false>
+                    </check>
+                    For det meste vågner jeg højst 30 minutter, før jeg skal op.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[26][answer_id]) and @DATA.question[26][answer_id]== 84}}">
+                          <input type="radio" name="question[26][answer_id]" value="84" checked="checked">
+                          <false><input type="radio" name="question[26][answer_id]" value="84"></false>
+                    </check>
+                    Mere end halvdelen af nætterne vågner jeg mere end 30 minutter, før jeg skal op.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[26][answer_id]) and @DATA.question[26][answer_id]== 85}}">
+                          <input type="radio" name="question[26][answer_id]" value="85" checked="checked">
+                          <false><input type="radio" name="question[26][answer_id]" value="85"></false>
+                    </check>
+                    Jeg vågner næsten altid mere end en times tid før jeg skal op, men jeg falder til sidst i søvn igen.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[26][answer_id]) and @DATA.question[26][answer_id]== 86}}">
+                          <input type="radio" name="question[26][answer_id]" value="86" checked="checked">
+                          <false><input type="radio" name="question[26][answer_id]" value="86"></false>
+                    </check>
+                    Jeg vågner mindst én time, før jeg skal op, og kan ikke falde i søvn igen.
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->
+
+

@@ -1,0 +1,63 @@
+<style>
+    .quiz-container {
+        background-color: #ffffff;
+    }
+
+    .carousel-indicators {
+        display: none;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .pull-right .btn.btn-success.btn-lg {
+        display: none;
+    }
+
+    .btn.btn-success.btn-lg {
+        margin-top: 100px;
+        width: 250px;
+    }
+</style>
+<div class="container">
+    <input name="separator" type="hidden" value="1">
+    <img src="{{ @ROOT }}/assets/img/logo_end.png">
+
+    <h3>Færdig!</h3>
+
+    <p>
+        Tak for dine svar. Tryk på “afslut” for at lukke vinduet og vende<br/>
+        tilbage til programmet.
+    </p>
+
+    <a id="quiz2-end" href="javascript:void(0);" class="btn btn-success btn-lg">
+        AFSLUT
+    </a>
+
+</div>
+<script>
+    $('#quiz2-end').on('click', function () {
+        //window.parent.location.href = "{{@ROOT}}/";
+        // update step
+       $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: "{{@ROOT}}/quiz_ajax/update_step",
+            data: {id: "{{@quiz_id}}", completed_date: new Date().toISOString().slice(0, 19).replace('T', ' ')},
+            success: function (){
+                // this call send email
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    url: "{{@ROOT}}/quiz_ajax/sendmail",
+                    data: {qusid:2},
+                    success: function (data){
+                       
+                        window.parent.location.href = "{{@ROOT}}/";
+                    }
+                });
+           }
+        });
+    });
+</script>

@@ -1,0 +1,75 @@
+<input name="quiz_id" type="hidden"
+       value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="38">
+
+<div class="container">
+
+    <h2>35. Syn på min fremtid</h2>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[40][answer_id]) and @DATA.question[40][answer_id]== 139}}">
+                        <input type="radio" name="question[40][answer_id]" value="139" checked="checked">
+                        <false><input type="radio" name="question[40][answer_id]" value="139"></false>
+                    </check>
+                    Jeg ser optimistisk på min fremtid.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[40][answer_id]) and @DATA.question[40][answer_id]== 140}}">
+                        <input type="radio" name="question[40][answer_id]" value="140" checked="checked">
+                        <false><input type="radio" name="question[40][answer_id]" value="140"></false>
+                    </check>
+                    Jeg er af og til pessimistisk med hensyn til min fremtid, men for
+                    det meste tror jeg på, at det vil gå bedre.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[40][answer_id]) and @DATA.question[40][answer_id]== 141}}">
+                        <input type="radio" name="question[40][answer_id]" value="141" checked="checked">
+                        <false><input type="radio" name="question[40][answer_id]" value="141"></false>
+                    </check>
+                    Jeg er ret sikker på, at min nærmeste fremtid (1-2 måneder) ikke
+                    er særligt lovende.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[40][answer_id]) and @DATA.question[40][answer_id]== 142}}">
+                        <input type="radio" name="question[40][answer_id]" value="142" checked="checked">
+                        <false><input type="radio" name="question[40][answer_id]" value="142"></false>
+                    </check>
+                    Jeg tror ikke, der er noget håb om, at det vil gå godt for mig på
+                    noget som helst tidspunkt i fremtiden.
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->

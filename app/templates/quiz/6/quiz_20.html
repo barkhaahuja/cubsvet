@@ -1,0 +1,330 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="20">
+
+    <h2>17. Bekymringer</h2>
+
+    <h4 class="text-muted">1 = “ligner mig slet ikke”, 5 = “”ligner mig meget”</h4>
+
+    <table class="table table-striped table-hover" style="margin-top:40px;">
+        <tbody>
+        <tr>
+            <td>Jeg er altid bekymret om et eller andet.</td>
+            <td>
+                <check if="{{ isset(@DATA.question[22][65]) and @DATA.question[22][65]==1}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][65]" value="1">
+                    <b>1</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][65]" value="1">
+                   <b>1</b>
+                  </button>
+                </false>
+               </check>
+
+                <check if="{{ isset(@DATA.question[22][65]) and @DATA.question[22][65]==2}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][65]" value="2">
+                    <b>2</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][65]" value="2">
+                   <b>2</b>
+                  </button>
+                </false>
+               </check>
+
+                
+                <check if="{{ isset(@DATA.question[22][65]) and @DATA.question[22][65]==3}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][65]" value="3">
+                    <b>3</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][65]" value="3">
+                   <b>3</b>
+                  </button>
+                </false>
+               </check>
+
+                
+                <check if="{{ isset(@DATA.question[22][65]) and @DATA.question[22][65]==4}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][65]" value="4">
+                    <b>4</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][65]" value="4">
+                   <b>4</b>
+                  </button>
+                </false>
+               </check>
+
+                <check if="{{ isset(@DATA.question[22][65]) and @DATA.question[22][65]==5}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][65]" value="5">
+                    <b>5</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][65]" value="5">
+                   <b>5</b>
+                  </button>
+                </false>
+               </check>
+                <input type="hidden" name="question[22][65][response]" value="">
+            </td>
+        </tr>
+        <tr>
+            <td>Jeg synes, det er let at holde op med at bekymre mig, når jeg vil.</td>
+            <td>
+                <check if="{{ isset(@DATA.question[22][66]) and @DATA.question[22][66]==1}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][66]" value="1">
+                    <b>1</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][66]" value="1">
+                   <b>1</b>
+                  </button>
+                </false>
+               </check>
+
+                <check if="{{ isset(@DATA.question[22][66]) and @DATA.question[22][66]==2}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][6]" value="2">
+                    <b>2</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][66]" value="2">
+                   <b>2</b>
+                  </button>
+                </false>
+               </check>
+
+                
+                <check if="{{ isset(@DATA.question[22][66]) and @DATA.question[22][66]==3}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][66]" value="3">
+                    <b>3</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][66]" value="3">
+                   <b>3</b>
+                  </button>
+                </false>
+               </check>
+
+                
+                <check if="{{ isset(@DATA.question[22][66]) and @DATA.question[22][66]==4}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][66]" value="4">
+                    <b>4</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][66]" value="4">
+                   <b>4</b>
+                  </button>
+                </false>
+               </check>
+
+                <check if="{{ isset(@DATA.question[22][66]) and @DATA.question[22][66]==5}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][66]" value="5">
+                    <b>5</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][66]" value="5">
+                   <b>5</b>
+                  </button>
+                </false>
+               </check>
+                <input type="hidden" name="question[22][66][response]" value="">
+            </td>
+        </tr>
+        <tr>
+            <td>Når jeg er færdig med en ting, begynder jeg at bekymre mig om alt muligt andet.
+            </td>
+            <td>
+                <check if="{{ isset(@DATA.question[22][67]) and @DATA.question[22][67]==1}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][67]" value="1">
+                    <b>1</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][67]" value="1">
+                   <b>1</b>
+                  </button>
+                </false>
+               </check>
+
+                <check if="{{ isset(@DATA.question[22][67]) and @DATA.question[22][67]==2}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][67]" value="2">
+                    <b>2</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][67]" value="2">
+                   <b>2</b>
+                  </button>
+                </false>
+               </check>
+
+                
+                <check if="{{ isset(@DATA.question[22][67]) and @DATA.question[22][67]==3}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][67]" value="3">
+                    <b>3</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][67]" value="3">
+                   <b>3</b>
+                  </button>
+                </false>
+               </check>
+
+                
+                <check if="{{ isset(@DATA.question[22][67]) and @DATA.question[22][67]==4}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][67]" value="4">
+                    <b>4</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][67]" value="4">
+                   <b>4</b>
+                  </button>
+                </false>
+               </check>
+
+                <check if="{{ isset(@DATA.question[22][67]) and @DATA.question[22][67]==5}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][67]" value="5">
+                    <b>5</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][67]" value="5">
+                   <b>5</b>
+                  </button>
+                </false>
+               </check>
+                <input type="hidden" name="question[22][67][response]" value="">
+            </td>
+        </tr>
+        <tr>
+            <td>Jeg bekymrer mig aldrig om noget som helst.</td>
+            <td>
+                <check if="{{ isset(@DATA.question[22][68]) and @DATA.question[22][68]==1}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][68]" value="1">
+                    <b>1</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][68]" value="1">
+                   <b>1</b>
+                  </button>
+                </false>
+               </check>
+
+                <check if="{{ isset(@DATA.question[22][68]) and @DATA.question[22][68]==2}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][68]" value="2">
+                    <b>2</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][68]" value="2">
+                   <b>2</b>
+                  </button>
+                </false>
+               </check>
+
+                
+                <check if="{{ isset(@DATA.question[22][68]) and @DATA.question[22][68]==3}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][68]" value="3">
+                    <b>3</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][68]" value="3">
+                   <b>3</b>
+                  </button>
+                </false>
+               </check>
+
+                
+                <check if="{{ isset(@DATA.question[22][68]) and @DATA.question[22][68]==4}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][68]" value="4">
+                    <b>4</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][68]" value="4">
+                   <b>4</b>
+                  </button>
+                </false>
+               </check>
+
+                <check if="{{ isset(@DATA.question[22][67]) and @DATA.question[22][68]==5}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][68]" value="5">
+                    <b>5</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][68]" value="5">
+                   <b>5</b>
+                  </button>
+                </false>
+               </check>
+                <input type="hidden" name="question[22][68][response]" value="">
+            </td>
+        </tr>
+        <tr>
+            <td>Når der ikke er mere jeg kan gøre ved et givet problem, stopper jeg med at bekymre mig om det.
+            </td>
+            <td>
+                <check if="{{ isset(@DATA.question[22][69]) and @DATA.question[22][69]==1}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][69]" value="1">
+                    <b>1</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][69]" value="1">
+                   <b>1</b>
+                  </button>
+                </false>
+               </check>
+
+                <check if="{{ isset(@DATA.question[22][69]) and @DATA.question[22][69]==2}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][69]" value="2">
+                    <b>2</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][69]" value="2">
+                   <b>2</b>
+                  </button>
+                </false>
+               </check>
+
+                
+                <check if="{{ isset(@DATA.question[22][69]) and @DATA.question[22][69]==3}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][69]" value="3">
+                    <b>3</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][69]" value="3">
+                   <b>3</b>
+                  </button>
+                </false>
+               </check>
+
+                
+                <check if="{{ isset(@DATA.question[22][69]) and @DATA.question[22][69]==4}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][69]" value="4">
+                    <b>4</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][69]" value="4">
+                   <b>4</b>
+                  </button>
+                </false>
+               </check>
+
+                <check if="{{ isset(@DATA.question[22][69]) and @DATA.question[22][67]==9}}">   
+                 <button type="button" class="btn btn-xs btn-default button_selected" name="question[22][69]" value="5">
+                    <b>5</b>
+                 </button>
+                <false>
+                  <button type="button" class="btn btn-xs btn-default" name="question[22][69]" value="5">
+                   <b>5</b>
+                  </button>
+                </false>
+               </check>
+                <input type="hidden" name="question[22][69][response]" value="">
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+<script src="{{@ROOT}}/assets/js/quiz_answer_numeric.js"></script>
+<!-- /container -->
+

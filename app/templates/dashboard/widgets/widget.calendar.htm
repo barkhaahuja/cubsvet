@@ -1,0 +1,100 @@
+<div class="WidgetWidth200 shadow RadCornAll">
+    <div class="EventsWidgetHeaderBar">Aktivitetskalender<a href="javascript:void(0);" class="CAL-help help"></a></div>
+
+    <div class="ContentWidgetEvents">
+
+        <div class="WD-Events-Date">{{ @datec }}</div>
+        <div class="WD-HR"></div>
+        <div class="WD-Events-Day">{{ @day }}</div>
+
+    </div>
+    <div id="ButtonCalendar" class="WD-Button WidgetButtons">
+        <a href="javascript:void(0);" class="WB-FullBlank RadCornAllExtreme">ÅBN</a>
+    </div>
+</div>
+
+<div id="ContentCalendar"></div>
+
+<div id="CAL-HelpContent" class="popover bottom">
+    <div class="title">Aktivitetskalender</div>
+    <p>Dette er din aktivitetskalender. Den
+        skal du bruge til at lave registrere
+        dine aktiviteter. Aktivitetsregistrering
+        hjælper dig til at få overblik over de
+        aktiviteter du laver hver dag.
+        Klik på ÅBN for at bruge redskabet.
+    </p>
+</div>
+
+
+
+<script>
+
+    $('#ButtonCalendar').click(function () {
+        <check if="{{@current_step == 2}}">
+        $('#ContentCalendar').load('{{@ROOT}}/window/calendar?id={{ date("Ymdhis", time()) }}', function () {
+            $('#ModalCalendar').modal('show');
+            
+            $('#ModalCalendar').on('shown.bs.modal', function () {
+                $("#calendar").fullCalendar('render');
+            });
+            $('#ModalCalendar').on('hidden.bs.modal', function (e) { 
+               window.location.href= window.location.href;
+            });
+        });
+        </check>
+        <check if="{{@current_step == 3}}">
+         <check if="{{@current_sub_step <= 2}}">
+        $('#ContentCalendar').load('{{@ROOT}}/window/calendar?id={{ date("Ymdhis", time()) }}', function () {
+            $('#ModalCalendar').modal('show');
+            $('#ModalCalendar').on('shown.bs.modal', function () {
+                $("#calendar").fullCalendar('render');
+            });
+            $('#ModalCalendar').on('hidden.bs.modal', function (e) { 
+               window.location.href= window.location.href;
+            });
+        });
+        </check>
+       <check if="{{@current_sub_step > 2}}">
+         $('#ContentCalendar').load('{{@ROOT}}/window/calendar32?id={{ date("Ymdhis", time()) }}', function () {
+            $('#ModalCalendar').modal('show');
+            $('#ModalCalendar').on('shown.bs.modal', function () {
+                $("#calendar").fullCalendar('render');
+            });
+            $('#ModalCalendar').on('hidden.bs.modal', function (e) { 
+               window.location.href= window.location.href;
+            });
+        });
+        
+         </check>
+        </check>
+        <check if="{{@current_step >= 4}}">
+        $('#ContentCalendar').load('{{@ROOT}}/window/calendar39?id={{ date("Ymdhis", time()) }}', function () {
+            $('#ModalCalendar').modal('show');
+            $('#ModalCalendar').on('shown.bs.modal', function () {
+                $("#calendar").fullCalendar('render');
+            });
+            $('#ModalCalendar').on('hidden.bs.modal', function (e) { 
+               window.location.href= window.location.href;
+            });
+        });
+        </check>
+    });
+
+</script>
+
+
+<script>
+
+    $(document).ready(function (){
+        // modal help
+        $('.CAL-help').popover({
+            content: $('#CAL-HelpContent').html(),
+            html: true,
+            placement: 'bottom',
+            trigger: 'hover',
+            container: 'body'
+        });
+    });
+
+</script>

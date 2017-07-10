@@ -1,0 +1,58 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="15">
+
+    <h2>12. Sædvanlige aktiviteter</h2>
+
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[16][answer_id]) and @DATA.question[16][answer_id]== 49}}">
+                          <input type="radio" name="question[16][answer_id]" value="49" checked="checked">
+                          <false><input type="radio" name="question[16][answer_id]" value="49"></false>
+                    </check>
+                    Jeg har ingen problemer med at udføre mine sædvanlige aktiviteter
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[16][answer_id]) and @DATA.question[16][answer_id]== 50}}">
+                          <input type="radio" name="question[16][answer_id]" value="50" checked="checked">
+                          <false><input type="radio" name="question[16][answer_id]" value="50"></false>
+                    </check>
+                    Jeg har nogle problemer med at udføre mine sædvanlige aktiviteter
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="radio">
+                <label>
+
+                    <check if="{{ isset(@DATA.question[16][answer_id]) and @DATA.question[16][answer_id]== 51}}">
+                          <input type="radio" name="question[16][answer_id]" value="51" checked="checked">
+                          <false><input type="radio" name="question[16][answer_id]" value="51"></false>
+                    </check>
+                    Jeg kan ikke udføre mine sædvanlige aktiviteter
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->
+
+

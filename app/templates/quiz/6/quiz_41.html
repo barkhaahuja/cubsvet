@@ -1,0 +1,74 @@
+<input name="quiz_id" type="hidden"
+       value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="42">
+
+<div class="container">
+
+    <h2>39. Evnen til at glæde sig over eller nyde noget (bortset fra sex)</h2>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[46][answer_id]) and @DATA.question[46][answer_id]== 155}}">
+                        <input type="radio" name="question[46][answer_id]" value="155" checked="checked">
+                        <false><input type="radio" name="question[46][answer_id]" value="155"></false>
+                    </check>
+                    Jeg nyder fornøjelige aktiviteter lige så meget som jeg plejer.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[46][answer_id]) and @DATA.question[46][answer_id]== 156}}">
+                        <input type="radio" name="question[46][answer_id]" value="156" checked="checked">
+                        <false><input type="radio" name="question[46][answer_id]" value="156"></false>
+                    </check>
+                    Jeg oplever ikke den samme glæde som sædvanlig ved fornøjelige
+                    aktiviteter.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[46][answer_id]) and @DATA.question[46][answer_id]== 157}}">
+                        <input type="radio" name="question[46][answer_id]" value="157" checked="checked">
+                        <false><input type="radio" name="question[46][answer_id]" value="157"></false>
+                    </check>
+                    Det er sjældent at jeg føler glæde ved nogen som helst aktivitet.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[46][answer_id]) and @DATA.question[46][answer_id]== 158}}">
+                        <input type="radio" name="question[46][answer_id]" value="158" checked="checked">
+                        <false><input type="radio" name="question[46][answer_id]" value="158"></false>
+                    </check>
+                    Det er mig ikke muligt at føle glæde eller nydelse ved noget som
+                    helst.
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->

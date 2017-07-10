@@ -1,0 +1,80 @@
+<input name="quiz_id" type="hidden"
+       value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="50">
+<div class="container">
+
+    <h2>47. Overfølsomhed i omgang med andre mennesker</h2>
+
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[54][answer_id]) and @DATA.question[54][answer_id]==187 }}">
+                        <input type="radio" name="question[54][answer_id]" value="187"
+                               checked="checked">
+                        <false><input type="radio" name="question[54][answer_id]"
+                                      value="187"></false>
+                    </check>
+                    Jeg har slet ikke været tilbøjelig til at føle mig afvist,
+                    forbigået, kritiseret eller såret af andre.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[54][answer_id]) and @DATA.question[54][answer_id]==188 }}">
+                        <input type="radio" name="question[54][answer_id]" value="188"
+                               checked="checked">
+                        <false><input type="radio" name="question[54][answer_id]"
+                                      value="188"></false>
+                    </check>
+                    Jeg har af og til følt mig afvist, forbigået, kritiseret eller
+                    såret af andre.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[54][answer_id]) and @DATA.question[54][answer_id]==189 }}">
+                        <input type="radio" name="question[54][answer_id]" value="189"
+                               checked="checked">
+                        <false><input type="radio" name="question[54][answer_id]"
+                                      value="189"></false>
+                    </check>
+                    Jeg har ofte følt mig afvist, forbigået, kritiseret eller såret af
+                    andre, men sådanne følelser har
+                    haft meget lidt indflydelse på mit forhold til andre mennesker
+                    eller på mit arbejde.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[54][answer_id]) and @DATA.question[54][answer_id]==190 }}">
+                        <input type="radio" name="question[54][answer_id]" value="190"
+                               checked="checked">
+                        <false><input type="radio" name="question[54][answer_id]"
+                                      value="190"></false>
+                    </check>
+                    Jeg har ofte følt mig afvist, forbigået, kritiseret eller såret af
+                    andre, og disse følelser har
+                    forstyrret mit forhold til andre mennesker og til mit arbejde.
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+
+</div>

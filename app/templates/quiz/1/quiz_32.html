@@ -1,0 +1,72 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="30">
+
+    <h2>25. Tendens til at være angst eller anspændt</h2>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[30][answer_id]) and @DATA.question[30][answer_id]== 99}}">
+                          <input type="radio" name="question[30][answer_id]" value="99" checked="checked">
+                          <false><input type="radio" name="question[30][answer_id]" value="99"></false>
+                    </check>
+                    Jeg føler mig ikke angst eller anspændt.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[30][answer_id]) and @DATA.question[30][answer_id]== 100}}">
+                          <input type="radio" name="question[30][answer_id]" value="100" checked="checked">
+                          <false><input type="radio" name="question[30][answer_id]" value="100"></false>
+                    </check>
+                    Jeg føler mig angst eller anspændt mindre end halvdelen af tiden.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[30][answer_id]) and @DATA.question[30][answer_id]== 101}}">
+                          <input type="radio" name="question[30][answer_id]" value="101" checked="checked">
+                          <false><input type="radio" name="question[30][answer_id]" value="101"></false>
+                    </check>
+                    Jeg føler mig angst eller anspændt det meste af tiden.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[30][answer_id]) and @DATA.question[30][answer_id]== 102}}">
+                          <input type="radio" name="question[30][answer_id]" value="102" checked="checked">
+                          <false><input type="radio" name="question[30][answer_id]" value="102"></false>
+                    </check>
+                    Jeg er næsten hele tiden ekstremt angst eller anspændt.
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->
+

@@ -1,0 +1,41 @@
+<style>
+    .quiz-container {
+        background-color: #ffffff;
+    }
+    .carousel-indicators {
+        display: none;
+    }
+    .container {
+        text-align: center;
+    }
+    
+    <check if="{{@question_title=='logo_end'}}">
+
+    .btn.btn-success {
+        position: absolute;
+        margin-top: -200px;
+        margin-left: -570px;
+    }
+
+    .btn.btn-success span {
+        display: none;
+    }
+    
+</check>
+
+</style>
+
+<div class="container">
+    <input name="separator" type="hidden" value="1">
+    
+    <img src="{{ @ROOT }}/assets/img/{{@question_title}}.png">
+
+    <h2>{{@question_subtitle}}</h2>
+
+    <p>
+        <!-- htmlentities-->
+        {{@question_description|raw}}
+    </p>
+
+</div>
+<!-- /container -->

@@ -1,0 +1,37 @@
+<style>
+    .VideoContainer {
+        height: 406px;
+        width: 720px;
+        margin: auto;
+        padding: 25px;
+    }
+</style>
+<link href="{{@ROOT}}/assets/css/video-js.css" rel="stylesheet">
+<script src="{{@ROOT}}/assets/js/video.js"></script>
+
+<input name="video" type="hidden" value="5">
+<input name="quiz_id" type="hidden" value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="5">
+<div class="VideoContainer">
+    <video id="video" class="video-js vjs-default-skin vjs-big-play-centered" controls
+           preload="none" width="720" height="406"
+           poster="{{@ROOT}}/assets/img/step0.poster.png"
+           data-setup="{}">
+        <source src="{{@ROOT}}/app/data/videos/0.4.mp4" type='video/mp4'/>
+    </video>
+</div>
+<script>
+    $(document).ready(function (){
+        hideBtnOnVideo();
+        // video player stuff
+        videojs.options.flash.swf = "{{@ROOT}}/assets/swf/video-js.swf";
+        videojs("video").ready(function () {
+            //var myPlayer = this;
+            this.on('ended', function () {
+                // update step
+                showBtnOnVideo();
+            });
+        });
+    });
+</script>
+

@@ -1,0 +1,74 @@
+<input name="quiz_id" type="hidden"
+       value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="56">
+
+<div class="container">
+
+    <h2>52. Ville du anbefale behandlingen til en ven med samme problemer?</h2>
+
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[60][answer_id]) and @DATA.question[60][answer_id]==207 }}">
+                        <input type="radio" name="question[60][answer_id]" value="207"
+                               checked="checked">
+                        <false><input type="radio" name="question[60][answer_id]"
+                                      value="207"></false>
+                    </check>
+                    Helt sikkert ikke
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[60][answer_id]) and @DATA.question[60][answer_id]==208 }}">
+                        <input type="radio" name="question[60][answer_id]" value="208"
+                               checked="checked">
+                        <false><input type="radio" name="question[60][answer_id]"
+                                      value="208"></false>
+                    </check>
+                    Det tror jeg ikke
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[60][answer_id]) and @DATA.question[60][answer_id]==209 }}">
+                        <input type="radio" name="question[60][answer_id]" value="209"
+                               checked="checked">
+                        <false><input type="radio" name="question[60][answer_id]"
+                                      value="209"></false>
+                    </check>
+                    Ja, det tror jeg
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[60][answer_id]) and @DATA.question[60][answer_id]==210 }}">
+                        <input type="radio" name="question[60][answer_id]" value="210"
+                               checked="checked">
+                        <false><input type="radio" name="question[60][answer_id]"
+                                      value="210"></false>
+                    </check>
+                    Helt sikkert
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+
+</div>

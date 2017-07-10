@@ -1,0 +1,68 @@
+<input name="quiz_id" type="hidden"
+       value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="37">
+
+<div class="container">
+
+    <h2>34. Syn på mig selv</h2>
+
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[39][answer_id]) and @DATA.question[39][answer_id]== 135}}">
+                        <input type="radio" name="question[39][answer_id]" value="135" checked="checked">
+                        <false><input type="radio" name="question[39][answer_id]" value="135"></false>
+                    </check>
+                    I mine øjne er jeg lige så meget værd og fortjener at have det
+                    ligeså godt som alle andre.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[39][answer_id]) and @DATA.question[39][answer_id]== 136}}">
+                        <input type="radio" name="question[39][answer_id]" value="136" checked="checked">
+                        <false><input type="radio" name="question[39][answer_id]" value="136"></false>
+                    </check>
+                    Jeg er mere selvbebrejdende, end jeg plejer at være.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[39][answer_id]) and @DATA.question[39][answer_id]== 137}}">
+                        <input type="radio" name="question[39][answer_id]" value="137" checked="checked">
+                        <false><input type="radio" name="question[39][answer_id]" value="137"></false>
+                    </check>
+                    Jeg tror for det meste, at jeg giver andre mennesker problemer.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[39][answer_id]) and @DATA.question[39][answer_id]== 138}}">
+                        <input type="radio" name="question[39][answer_id]" value="138" checked="checked">
+                        <false><input type="radio" name="question[39][answer_id]" value="138"></false>
+                    </check>
+                    Jeg tænker næsten hele tiden på større og mindre fejl ved mig
+                    selv.
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+
+</div>

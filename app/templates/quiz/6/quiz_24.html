@@ -1,0 +1,73 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="25">
+
+    <h2>20. Besvær med at sove om natten</h2>
+
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[25][answer_id]) and @DATA.question[25][answer_id]== 79}}">
+                          <input type="radio" name="question[25][answer_id]" value="79" checked="checked">
+                          <false><input type="radio" name="question[25][answer_id]" value="79"></false>
+                    </check>
+                    Jeg vågner ikke i løbet af natten.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[25][answer_id]) and @DATA.question[25][answer_id]== 80}}">
+                          <input type="radio" name="question[25][answer_id]" value="80" checked="checked">
+                          <false><input type="radio" name="question[25][answer_id]" value="80"></false>
+                    </check>
+                    Jeg har en urolig, let søvn med kortvarig opvågnen nogle få gange hver nat.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[25][answer_id]) and @DATA.question[25][answer_id]== 81}}">
+                          <input type="radio" name="question[25][answer_id]" value="81" checked="checked">
+                          <false><input type="radio" name="question[25][answer_id]" value="81"></false>
+                    </check>
+                    Jeg vågner mindst én gang hver nat, men falder let i søvn igen.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[25][answer_id]) and @DATA.question[25][answer_id]== 82}}">
+                          <input type="radio" name="question[25][answer_id]" value="82" checked="checked">
+                          <false><input type="radio" name="question[25][answer_id]" value="82"></false>
+                    </check>
+                    De fleste nætter vågner jeg mere end én gang om natten og ligger vågen i 20 minutter eller længere.
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!-- /container -->
+

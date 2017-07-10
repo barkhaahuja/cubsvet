@@ -1,0 +1,133 @@
+<!-- <form action="#">
+        <fieldset>
+            <input type="text" name="search" value="" id="id_search" placeholder="Search" autofocus />
+        </fieldset>
+ </form>-->
+<h2>Users
+    <check if="{{ @logged_user->isDoctorGroup() }}">
+        <a href="{{ @BASE.'/user/create' }}" class="btn btn-primary btn-md pull-right"><i
+                class="glyphicon glyphicon-plus"></i> Add</a>
+    </check>
+</h2>
+
+<check if="{{ isset(@unblocked) && @unblocked == '1' }}">
+
+        <!-- code for displaying unblock message -->
+
+            <center><div style=" text-align:left" class="alert alert-info"><b>User unblocked successfully.</b> </div></center>
+
+        <!-- end  -->
+
+</check>
+
+<table class="table table-striped table-hover table-bordered" id="data">
+    <thead>
+        <tr>
+            
+            <check if="{{ (@SESSION['group_id'] == 4) || (@SESSION['group_id'] == 5) }}">
+                <th>ID</th>
+                <false>
+                    <th>First Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                    <th>Group</th>
+                    <th>Current Step</th>
+                    <th>Last Login(CET)</th>
+                </false>
+            </check>
+            
+            
+    <check if="{{ @logged_user->isDoctorGroup() || @logged_user->isAdminGroup() }}">
+        <th style="white-space: nowrap">Actions</th>
+    </check>
+</tr>
+</thead>
+<tbody>
+<repeat group="{{ @users }}" value="{{ @user }}">
+    <tr>
+        <check if="{{ (@SESSION['group_id'] == 4) || (@SESSION['group_id'] == 5) }}">
+             <td style="width:90%">{{ trim(@user.id) }}</td>
+             <false>
+                <td>{{ trim(@user.name) }}</td>
+                <td>{{ trim(@user.last_name) }}</td>
+                <td><a href="{{ @BASE.'/user/update/'. @user.id }}">{{ trim(@user.email) }}</a></td>
+                <td>{{ trim(@user->getGroupName()) }}</td>
+                <td>Step {{ trim(@user->treatment_step) }}</td>
+                <td>{{ trim(@user.access_date) }}</td>
+             </false>
+        </check>
+       
+    <check if="{{ @logged_user->isDoctorGroup() || @logged_user->isAdminGroup() }}">
+        
+        
+        <check if="{{ (@SESSION['group_id'] == 4) || (@SESSION['group_id'] == 5) }}">
+            <td  style="white-space: nowrap">
+                <check if="{{ @user->is_blocked }}">
+                        <a href="{{ @BASE.'/user/unblock/'. @user.id }}" onclick="return confirm('Er du sikker på, du vil fjerne blokeringen denne bruger?')" class="btn btn-primary btn-xs">
+                            <i class="glyphicon glyphicon-ok icon-white"></i> Unblock 
+                        </a>
+                    </check>
+
+                    <!-- fix for unblock button -->
+
+                        <a href="{{ @BASE.'/user/download/'. @user.id }}" class="btn btn-primary btn-xs">
+                            <i class="glyphicon glyphicon-export icon-white"></i> Export 
+                        </a>
+
+            </td>
+            <false>
+            
+             <td>
+                    <a href="{{ @BASE.'/user/update/'. @user.id }}" class="btn btn-primary btn-xs">
+                        <i class="glyphicon glyphicon-edit"></i> Edit
+                    </a>
+                    &nbsp;
+                    <check if="{{ @user->is_blocked }}">
+                        <a href="{{ @BASE.'/user/unblock/'. @user.id }}" onclick="return confirm('Er du sikker på, du vil fjerne blokeringen denne bruger?')" class="btn btn-primary btn-xs">
+                            <i class="glyphicon glyphicon-ok icon-white"></i> Unblock 
+                        </a>
+                    </check>
+
+                    <!-- fix for unblock button -->
+
+                        <a href="{{ @BASE.'/user/download/'. @user.id }}" class="btn btn-primary btn-xs">
+                            <i class="glyphicon glyphicon-export icon-white"></i> Export 
+                        </a>
+
+                    <!-- fix for unblock button end -->
+
+
+                    <!-- fix for finish button -->
+        <!--            <check if="{{ @user->disable_lite_questionnaires }}">
+                        <a href="#" class="btn btn-default btn-xs" disabled='disabled'>
+                             Finished 
+                        </a>
+                    </check>
+                    <check if="{{ !@user->disable_lite_questionnaires }}">
+                        <a href="{{ @BASE.'/user/finish/'. @user.id }}" onclick="return confirm('Er du sikker på du vil stoppe Lite Spørgeskemaer for denne bruger ?')" class="btn btn-primary btn-xs">
+                            <i class="glyphicon glyphicon-record icon-white"></i> Finish 
+                        </a>
+                    </check>-->
+                    <!-- fix for finish button end -->
+
+                    &nbsp;
+
+                    <a href="{{ @BASE.'/user/discharge/'. @user.id }}" onclick="return confirm('Er du sikker på du vil aflade denne bruger?')" class="btn btn-primary btn-xs">
+                        <i class="glyphicon glyphicon-remove icon-white"></i>Discharge 
+                    </a>
+
+                    &nbsp;
+                    <a href="{{ @BASE.'/user/delete/'. @user.id }}" onclick="return confirm('Er du sikker på, at du vil slette brugeren?')" class="btn btn-danger btn-xs">
+                        <i class="glyphicon glyphicon-trash icon-white"></i> Delete 
+                    </a>
+
+                </td>
+            </false>
+        </check>
+        
+       
+    </check>
+    </tr>
+</repeat>
+</tbody>
+</table>

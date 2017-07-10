@@ -1,0 +1,78 @@
+<style>
+    
+    .quiz-container {
+        background-color: #ffffff;
+    }
+
+    .carousel-indicators {
+        display: none;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .pull-right .btn.btn-success.btn-lg {
+        display: none;
+    }
+
+    .btn.btn-success.btn-lg {
+        margin-top: 100px;
+        width: 250px;
+    }
+    
+    #quizform .form-group {
+        display: none;
+    }
+    
+</style>
+
+<div class="container">
+    <input name="separator" type="hidden" value="1">
+    <img src="{{ @ROOT }}/assets/img/logo_end.png">
+
+    <h3>Færdig!</h3>
+
+    <a id="quiz6-end" href="javascript:void(0);" class="btn btn-success btn-lg">
+        AFSLUT
+    </a>
+
+</div>
+
+<script>
+    $('.form-group .container').hide();
+    
+    $('#quiz6-end').on('click', function () {
+        // update step
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: "{{@ROOT}}/user/update/step",
+            data: {id: "{{@user_id}}", treatment_step: '8.14'},
+            success: function (data){ 
+                // this call closes the quiz, end it up
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    url: "{{@ROOT}}/quiz_ajax/update_step",
+                    data: {id: "{{@quiz_id}}", completed_date: new Date().toISOString().slice(0, 19).replace('T', ' ')},
+                    success: function (data){
+                        $.ajax({
+                             type: 'POST',
+                             dataType: 'json',
+                             url: "{{@ROOT}}/quiz_ajax/sendmail",
+                             data: {qusid:6},
+                             success: function (data){
+                                 
+                             }
+                         });
+                    }
+                });
+            }
+        });
+        
+        $('#myModal').modal('hide');
+        window.parent.location.href = "{{@ROOT}}/step/8/14";        
+    });
+    
+</script>

@@ -1,0 +1,1 @@
+<p>Sorry, but your time to confirm registration expired.</p>

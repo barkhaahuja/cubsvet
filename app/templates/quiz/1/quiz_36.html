@@ -1,0 +1,155 @@
+<input name="quiz_id" type="hidden"
+       value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="34">
+
+<div class="container">
+
+    <h3>Besvar venligst ENTEN 29 ELLER 30 (ikke begge dele)</h3>
+
+    <h2>29. Nedsat appetit</h2>
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[34][answer_id]) and @DATA.question[34][answer_id]== 115}}">
+                        <input type="radio" name="question[34][answer_id]" value="115" checked="checked">
+                        <false><input type="radio" name="question[34][answer_id]" value="115"></false>
+                    </check>
+                    Der er ingen ændring i forhold til min sædvanlige appetit.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[34][answer_id]) and @DATA.question[34][answer_id]== 116}}">
+                        <input type="radio" name="question[34][answer_id]" value="116" checked="checked">
+                        <false><input type="radio" name="question[34][answer_id]" value="116"></false>
+                    </check>
+                    Jeg spiser noget sjældnere eller mindre mængder mad end
+                    sædvanligt.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[34][answer_id]) and @DATA.question[34][answer_id]== 117}}">
+                        <input type="radio" name="question[34][answer_id]" value="117" checked="checked">
+                        <false><input type="radio" name="question[34][answer_id]" value="117"></false>
+                    </check>
+                    Jeg spiser meget mindre end sædvanligt og kun med en personlig
+                    overvindelse.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[34][answer_id]) and @DATA.question[34][answer_id]== 118}}">
+                        <input type="radio" name="question[34][answer_id]" value="118" checked="checked">
+                        <false><input type="radio" name="question[34][answer_id]" value="118"></false>
+                    </check>
+                    Jeg spiser sjældent inden for et døgn, og kun med en enorm personlig overvindelse, eller når andre overtaler mig til det.
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+    <h2>30. Øget appetit</h2>
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[35][answer_id]) and @DATA.question[35][answer_id]== 119}}">
+                        <input type="radio" name="question[35][answer_id]" value="119" checked="checked">
+                        <false><input type="radio" name="question[35][answer_id]" value="119"></false>
+                    </check>
+                    Der er ingen ændring i forhold til min sædvanlige appetit.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[35][answer_id]) and @DATA.question[35][answer_id]== 120}}">
+                        <input type="radio" name="question[35][answer_id]" value="120" checked="checked">
+                        <false><input type="radio" name="question[35][answer_id]" value="120"></false>
+                    </check>
+                    Jeg føler trang til at spise oftere end sædvanligt.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[35][answer_id]) and @DATA.question[35][answer_id]== 121}}">
+                        <input type="radio" name="question[35][answer_id]" value="121" checked="checked">
+                        <false><input type="radio" name="question[35][answer_id]" value="121"></false>
+                    </check>
+                    Jeg spiser gennemgående oftere og/eller større mængder mad end
+                    sædvanligt.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[35][answer_id]) and @DATA.question[35][answer_id]== 122}}">
+                        <input type="radio" name="question[35][answer_id]" value="122" checked="checked">
+                        <false><input type="radio" name="question[35][answer_id]" value="122"></false>
+                    </check>
+                    Jeg føler mig drevet til at spise for meget både ved måltiderne og
+                    mellem måltiderne.
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!-- /container -->
+<script type="application/javascript">
+    $(document).ready(function () {
+        $("input[name='question[34][answer_id]']").click(function () {
+            $("input[name='question[35][answer_id]']").removeAttr("checked");
+        });
+
+        $("input[name='question[35][answer_id]']").click(function () {
+            $("input[name='question[34][answer_id]']").removeAttr("checked");
+        });
+    });
+</script>

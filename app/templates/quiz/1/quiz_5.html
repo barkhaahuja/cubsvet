@@ -1,0 +1,176 @@
+<div class="container" xmlns="http://www.w3.org/1999/html">
+
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="3">
+
+    <h2>1. Nuværende job/igangværende uddannelse</h2>
+
+    <h4 class="text-muted">Er du på nuværende tidspunkt i arbejde?</h4>
+
+    <div class="row">
+        <div class="col-sm-1">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[1][response]) and @DATA.question[1][response]=='yes' }}">
+                        <input type="radio" name="question[1][response]" value="yes" checked>
+                        <false><input type="radio" name="question[1][response]" value="yes"></false>
+                    </check>
+                    Ja
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-1">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[1][response]) and @DATA.question[1][response]=='yes' }}">
+                        <input type="radio" name="question[1][response]" value="no" checked>
+                        <false><input type="radio" name="question[1][response]" value="no"></false>
+                    </check>
+                    Nej
+                </label>
+            </div>
+        </div>
+        
+        <div class="col-sm-2">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[1][response]) and @DATA.question[1][response]=='not applicable' }}">
+                        <input type="radio" name="question[1][response]" value="not applicable" checked>
+                        <false><input type="radio" name="question[1][response]" value="not applicable"></false>
+                    </check>
+                    Ikke relevant
+                </label>
+            </div>
+        </div>
+
+        <div class="col-sm-8">
+            <div class="field-description">
+                <p>Hvis ja, noter venligst hvilken type på listen herunder:</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[2][answer_id]) and @DATA.question[2][answer_id]==1 }}">
+                        <input type="radio" name="question[2][answer_id]" value="1" checked="checked">
+                        <false><input type="radio" name="question[2][answer_id]" value="1"></false>
+                    </check>
+                    Alm. job fuldtids - Hvilket:
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <!--
+                Here question[question_id][answer_id][response] answer_id should match with
+                the one above "POST.question[2][answer_id]==1"
+            -->
+            <input type="text" name="question[2][1][response]" class="form-control"
+                   value="{{ isset(@DATA.question[2][1][response]) ? @DATA.question[2][1][response] : '' }}">
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[2][answer_id]) and @DATA.question[2][answer_id]==2 }}">
+                        <input type="radio" name="question[2][answer_id]" value="2" checked="checked">
+                        <false><input type="radio" name="question[2][answer_id]" value="2"></false>
+                    </check>
+                    Alm. job deltids - Hvilket:
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <input type="text" name="question[2][2][response]" class="form-control"
+                   value="{{ isset(@DATA.question[2][2][response]) ? @DATA.question[2][2][response] : '' }}">
+        </div>
+        <div class="col-sm-3">
+            <div class="field-description">
+                <p>, og antal timer/ugen</p>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <input type="text" name="question[2][2][response_value]" class="form-control"
+                   value="{{ isset(@DATA.question[2][2][response_value]) ? @DATA.question[2][2][response_value] : '' }}">
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[2][answer_id]) and @DATA.question[2][answer_id]==3 }}">
+                        <input type="radio" name="question[2][answer_id]" value="3" checked="checked">
+                        <false><input type="radio" name="question[2][answer_id]" value="3"></false>
+                    </check>
+                    Flexjob - Hvilket:
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <input type="text" name="question[2][3][response]" class="form-control"
+                   value="{{ isset(@DATA.question[2][3][response]) ? @DATA.question[2][3][response] : '' }}">
+        </div>
+        <div class="col-sm-3">
+            <div class="field-description">
+                <p>, og antal timer/ugen</p>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <input type="text" name="question[2][3][response_value]" class="form-control"
+                   value="{{ isset(@DATA.question[2][3][response_value]) ? @DATA.question[2][3][response_value] : '' }}">
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[2][answer_id]) and @DATA.question[2][answer_id]==4 }}">
+                        <input type="radio" name="question[2][answer_id]" value="4" checked="checked">
+                        <false><input type="radio" name="question[2][answer_id]" value="4"></false>
+                    </check>
+                    I aktivering eller lign. - Beskriv:
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <textarea name="question[2][4][response]" class="form-control" rows="3">{{ isset(@DATA.question[2][4][response]) ? @DATA.question[2][4][response] : '' }}</textarea>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row" style="margin-top: 15px;">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[2][answer_id]) and @DATA.question[2][answer_id]==5 }}">
+                        <input type="radio" name="question[2][answer_id]" value="5" checked="checked">
+                        <false><input type="radio" name="question[2][answer_id]" value="5"></false>
+                    </check>
+                    Andet - Hvilket:
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <input type="text" name="question[2][5][response]" class="form-control"
+                   value="{{ isset(@DATA.question[2][5][response]) ? @DATA.question[2][5][response] : '' }}">
+        </div>
+    </div>
+
+</div>
+<!-- /container -->

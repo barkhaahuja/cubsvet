@@ -1,0 +1,48 @@
+<style>
+    .VideoContainer {
+        height: 406px;
+        width: 720px;
+        margin: auto;
+        padding: 25px;
+    }
+</style>
+
+<link href="{{@ROOT}}/assets/css/video-js.css" rel="stylesheet">
+<script src="{{@ROOT}}/assets/js/video.js"></script>
+<div id="videosContainer"></div>
+<input name="video" type="hidden" value="1">
+<input name="quiz_id" type="hidden" value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="2">
+
+<div class="VideoContainer">
+    <video id="video" class="video-js vjs-default-skin vjs-big-play-centered" controls
+           preload="none" width="720" height="406"
+        <check if="{{@onStepX}}">
+           poster="{{@ROOT}}/assets/img/stepX.poster.png"
+           <false>
+               poster="{{@ROOT}}/assets/img/step0.poster.png"
+           </false>
+        </check>
+           data-setup="{}">
+        <check if="{{@onStepX}}">
+            <source src="{{@ROOT}}/app/data/videos/X.0.mp4" type='video/mp4'/>
+            <false>
+                <source src="{{@ROOT}}/app/data/videos/0.2.mp4" type='video/mp4'/>
+            </false>
+        </check>
+    </video>
+</div>
+
+<script>
+    $(document).ready(function (){
+        hideBtnOnVideo();
+        // video player stuff
+        videojs.options.flash.swf = "{{@ROOT}}/assets/swf/video-js.swf";
+        videojs("video").ready(function () {
+            //var myPlayer = this;
+            this.on('ended', function () {
+                showBtnOnVideo();
+            });
+        });
+    });
+</script>

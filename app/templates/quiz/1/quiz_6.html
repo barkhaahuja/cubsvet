@@ -1,0 +1,151 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="4">
+
+    <h2>2. Nuværende job/igangværende uddannelse</h2>
+
+    <h4 class="text-muted">Er du på nuværende tidspunkt igang med en uddannelse?</h4>
+
+    <div class="row">
+        <div class="col-sm-1">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[3][response]) and @DATA.question[3][response]=='yes' }}">
+                        <input type="radio" name="question[3][response]" value="yes" checked>
+                        <false><input type="radio" name="question[3][response]" value="yes"></false>
+                    </check>
+                    Ja
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-1">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[3][response]) and @DATA.question[3][response]=='no' }}">
+                        <input type="radio" name="question[3][response]" value="no" checked>
+                        <false><input type="radio" name="question[3][response]" value="no"></false>
+                    </check>
+                    Nej
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div class="field-description">
+                <p>Hvis ja, noter venligst hvilken type på listen herunder:</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[4][answer_id]) and @DATA.question[4][answer_id]=='6' }}">
+                        <input type="radio" name="question[4][answer_id]" value="6" checked>
+                        <false><input type="radio" name="question[4][answer_id]" value="6"></false>
+                    </check>
+                    Ungdomsuddannelse - Hvilken:
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <input type="text" name="question[4][6][response]" class="form-control"
+                   value="{{ isset(@DATA.question[4][6][response]) ? @DATA.question[4][6][response] : '' }}">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[4][answer_id]) and @DATA.question[4][answer_id]=='7' }}">
+                        <input type="radio" name="question[4][answer_id]" value="7" checked>
+                        <false><input type="radio" name="question[4][answer_id]" value="7"></false>
+                    </check>
+                    Håndværksmæssig uddannelse - Hvilken:
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <input type="text" name="question[4][7][response]" class="form-control"
+                   value="{{ isset(@DATA.question[4][7][response]) ? @DATA.question[4][7][response] : '' }}">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[4][answer_id]) and @DATA.question[4][answer_id]=='8' }}">
+                        <input type="radio" name="question[4][answer_id]" value="8" checked>
+                        <false><input type="radio" name="question[4][answer_id]" value="8"></false>
+                    </check>
+                    Kort videregående uddannelse (1-2 år) - Hvilken:
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-7">
+            <input type="text" name="question[4][8][response]" class="form-control"
+                   value="{{ isset(@DATA.question[4][8][response]) ? @DATA.question[4][8][response] : '' }}">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[4][answer_id]) and @DATA.question[4][answer_id]=='9' }}">
+                        <input type="radio" name="question[4][answer_id]" value="9" checked>
+                        <false><input type="radio" name="question[4][answer_id]" value="9"></false>
+                    </check>
+                    Mellemlang videregående uddannelse (3-4 år) - Hvilken
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <input type="text" name="question[4][9][response]" class="form-control"
+                   value="{{ isset(@DATA.question[4][9][response]) ? @DATA.question[4][9][response] : '' }}">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-5">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[4][answer_id]) and @DATA.question[4][answer_id]=='10' }}">
+                        <input type="radio" name="question[4][answer_id]" value="10" checked>
+                        <false><input type="radio" name="question[4][answer_id]" value="10"></false>
+                    </check>
+                    Lang videregående uddannelse (5-6 år) - Hvilken:
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-7">
+            <input type="text" name="question[4][10][response]" class="form-control"
+                   value="{{ isset(@DATA.question[4][10][response]) ? @DATA.question[4][10][response] : '' }}">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[4][answer_id]) and @DATA.question[4][answer_id]=='11' }}">
+                        <input type="radio" name="question[4][answer_id]" value="11" checked>
+                        <false><input type="radio" name="question[4][answer_id]" value="11"></false>
+                    </check>
+                    Anden uddannelse - Hvilken:
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <input type="text" name="question[4][11][response]" class="form-control"
+                   value="{{ isset(@DATA.question[4][11][response]) ? @DATA.question[4][11][response] : '' }}">
+        </div>
+    </div>
+
+</div>
+<!-- /container -->

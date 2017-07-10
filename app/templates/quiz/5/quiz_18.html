@@ -1,0 +1,47 @@
+<style>
+    .quiz-container {
+        background-color: #ffffff;
+    }
+    .container {
+        text-align: center;
+    }
+    .container h1 {
+        margin-top: 40px;
+        font-size: 72px;
+    }
+
+</style>
+
+<div class="container">
+    <input name="separator" type="hidden" value="17">
+    <img src="{{ @ROOT }}/assets/img/logo_main.png">
+
+    <h4 class="text-muted">Velkommen tilbage! Har du gennemført øvelsen?</h4>
+
+    <div class="row">
+        <div class="col-sm-1">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[5][response]) and @DATA.question[1][response]=='yes' }}">
+                        <input type="radio" name="question[5][response]" value="yes" checked>
+                        <false><input type="radio" name="question[1][response]" value="yes"></false>
+                    </check>
+                    Ja
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-1">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[5][response]) and @DATA.question[1][response]=='yes' }}">
+                        <input type="radio" name="question[5][response]" value="no" checked>
+                        <false><input type="radio" name="question[5][response]" value="no"></false>
+                    </check>
+                    Nej
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->

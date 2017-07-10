@@ -1,0 +1,126 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="5">
+
+    <h2>3. Nuværende job/igangværende uddannelse</h2>
+
+    <h4 class="text-muted">Hvis du på nuværende tidspunkt hverken er i arbejde eller i gang med en 
+        uddannelse (altså svaret nej til både spørgsmål 1 og 2), noter venligst status herunder. Ellers svar "ikke relevant":
+    </h4>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[6][answer_id]) and @DATA.question[6][answer_id]==234 }}">
+                        <input type="radio" name="question[6][answer_id]" value="234" checked="checked">
+                        <false><input type="radio" name="question[6][answer_id]" value="234"></false>
+                    </check>
+                    Ikke relevant
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[6][answer_id]) and @DATA.question[6][answer_id]==12 }}">
+                        <input type="radio" name="question[6][answer_id]" value="12" checked="checked">
+                        <false><input type="radio" name="question[6][answer_id]" value="12"></false>
+                    </check>
+                    Sygemeldt
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[6][answer_id]) and @DATA.question[6][answer_id]==13 }}">
+                        <input type="radio" name="question[6][answer_id]" value="13" checked="checked">
+                        <false><input type="radio" name="question[6][answer_id]" value="13"></false>
+                    </check>
+                    Kontanthjælp/bistandshjælp
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[6][answer_id]) and @DATA.question[6][answer_id]==14 }}">
+                        <input type="radio" name="question[6][answer_id]" value="14" checked="checked">
+                        <false><input type="radio" name="question[6][answer_id]" value="14"></false>
+                    </check>
+                    Førtidspensionist
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[6][answer_id]) and @DATA.question[6][answer_id]==15 }}">
+                        <input type="radio" name="question[6][answer_id]" value="15" checked="checked">
+                        <false><input type="radio" name="question[6][answer_id]" value="15"></false>
+                    </check>
+                    Pensionist pga. alder
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row" >
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[6][answer_id]) and @DATA.question[6][answer_id]==16 }}">
+                        <input type="radio" name="question[6][answer_id]" value="16" checked="checked">
+                        <false><input type="radio" name="question[6][answer_id]" value="16"></false>
+                    </check>
+                    Arbejdsløs, men søger/kan arbejde
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row" >
+        <div class="col-sm-3">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[6][answer_id]) and @DATA.question[6][answer_id]==17 }}">
+                        <input type="radio" name="question[6][answer_id]" value="17" checked="checked">
+                        <false><input type="radio" name="question[6][answer_id]" value="17"></false>
+                    </check>
+                    Anden grund - Hvilken:
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <textarea name="question[6][17][response]" class="form-control" rows="3">{{ isset(@DATA.question[6][17][response]) ? @DATA.question[6][17][response] : '' }}</textarea>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->

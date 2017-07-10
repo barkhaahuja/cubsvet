@@ -1,0 +1,10 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <ul class="nav">
+            <li <check if="{{ @page_head == 'User List' }}">class="active"</check>><a href="{{ @BASE.'/user' }}">
+                <i class="glyphicon glyphicon-th icon-black"></i> List</a></li>
+            <li <check if="{{ @page_head == 'Create User' }}">class="active"</check>><a href="{{ @BASE.'/user/create' }}">
+                <i class="glyphicon glyphicon-plus-sign icon-black"></i> Create</a></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,158 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="11">
+
+    <h2>9. Medicinsk behandling</h2>
+
+    <h4 class="text-muted">Er du på nuværende tidspunkt i medicinsk behandling for psykisk lidelse</h4>
+
+    <div class="row">
+        <div class="col-sm-1">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[12][response]) and @DATA.question[12][response]=='yes' }}">
+                        <input type="radio" name="question[12][response]" value="yes" checked>
+                        <false><input type="radio" name="question[12][response]" value="yes"></false>
+                    </check>
+                    Ja
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-1">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[12][response]) and @DATA.question[12][response]=='no' }}">
+                        <input type="radio" name="question[12][response]" value="no" checked>
+                        <false><input type="radio" name="question[12][response]" value="no"></false>
+                    </check>
+                    Nej
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-10">
+            <div class="field-description">
+                <p>Hvis ja, noter venligst grundigt hvilke(t) præparat(er) og dosis herunder:</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs"></br>
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="radio">
+                <label>Præparat:</label>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <input type="text" name="question[13][35][response]" class="form-control"
+                   value="{{ isset(@DATA.question[13][35][response]) ? @DATA.question[13][35][response] : '' }}">
+        </div>
+        <div class="col-sm-1">
+            <div class="field-description">
+                <p>Dosis:</p>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <input type="text" name="question[13][35][response_value]" class="form-control"
+                   value="{{ isset(@DATA.question[13][35][response_value]) ? @DATA.question[13][35][response_value] : '' }}">
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="radio">
+                <label>Præparat:</label>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <input type="text" name="question[13][36][response]" class="form-control"
+                   value="{{ isset(@DATA.question[13][36][response]) ? @DATA.question[13][36][response] : '' }}">
+        </div>
+        <div class="col-sm-1">
+            <div class="field-description">
+                <p>Dosis:</p>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <input type="text" name="question[13][36][response_value]" class="form-control"
+                   value="{{ isset(@DATA.question[13][36][response_value]) ? @DATA.question[13][36][response_value] : '' }}">
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="radio">
+                <label>Præparat:</label>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <input type="text" name="question[13][37][response]" class="form-control"
+                   value="{{ isset(@DATA.question[13][37][response]) ? @DATA.question[13][37][response] : '' }}">
+        </div>
+        <div class="col-sm-1">
+            <div class="field-description">
+                <p>Dosis:</p>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <input type="text" name="question[13][37][response_value]" class="form-control"
+                   value="{{ isset(@DATA.question[13][37][response_value]) ? @DATA.question[13][37][response_value] : '' }}">
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="radio">
+                <label>Præparat:</label>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <input type="text" name="question[13][38][response]" class="form-control"
+                   value="{{ isset(@DATA.question[13][38][response]) ? @DATA.question[13][38][response] : '' }}">
+        </div>
+        <div class="col-sm-1">
+            <div class="field-description">
+                <p>Dosis:</p>
+            </div>
+        </div>
+        <div class="col-sm-2">
+            <input type="text" name="question[13][38][response_value]" class="form-control"
+                   value="{{ isset(@DATA.question[13][38][response_value]) ? @DATA.question[13][38][response_value] : '' }}">
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-2">
+            <div class="radio">
+                <label>Præparat:</label>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <input type="text" name="question[13][39][response]" class="form-control"
+                   value="{{ isset(@DATA.question[13][39][response]) ? @DATA.question[13][39][response] : '' }}">
+        </div>
+        <div class="col-sm-1">
+            <div class="field-description">
+                <p>Dosis:</p>
+            </div>
+        </div>
+        <div class="col-sm-2">
+
+            <input type="text" name="question[13][39][response_value]" class="form-control"
+                   value="{{ isset(@DATA.question[13][39][response_value]) ? @DATA.question[13][39][response_value] : '' }}">
+        </div>
+    </div>
+
+</div>
+<!-- /container -->
+

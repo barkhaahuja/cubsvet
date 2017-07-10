@@ -1,0 +1,72 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="24">
+
+    <h2>19. Besvær med at falde i søvn</h2>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[24][answer_id]) and @DATA.question[24][answer_id]== 75}}">
+                          <input type="radio" name="question[24][answer_id]" value="75" checked="checked">
+                          <false><input type="radio" name="question[24][answer_id]" value="75"></false>
+                    </check>
+                    Det tager mig aldrig længere end 30 minutter at falde i søvn.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[24][answer_id]) and @DATA.question[24][answer_id]== 76}}">
+                          <input type="radio" name="question[24][answer_id]" value="76" checked="checked">
+                          <false><input type="radio" name="question[24][answer_id]" value="76"></false>
+                    </check>
+                    Op til 3 aftner om ugen tager det mig mere end 30 minutter at falde i søvn.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[24][answer_id]) and @DATA.question[24][answer_id]== 77}}">
+                          <input type="radio" name="question[24][answer_id]" value="77" checked="checked">
+                          <false><input type="radio" name="question[24][answer_id]" value="77"></false>
+                    </check>
+                    De fleste aftner tager det mig mere end 30 minutter at falde i søvn.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[24][answer_id]) and @DATA.question[24][answer_id]== 78}}">
+                          <input type="radio" name="question[24][answer_id]" value="78" checked="checked">
+                          <false><input type="radio" name="question[24][answer_id]" value="78"></false>
+                    </check>
+                    De fleste aftner tager det mig mere end 60 minutter at falde i søvn.
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->
+

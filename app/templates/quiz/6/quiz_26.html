@@ -1,0 +1,74 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="27">
+
+    <h2>22. Tendens til at sove for meget</h2>
+
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[27][answer_id]) and @DATA.question[27][answer_id]== 87}}">
+                          <input type="radio" name="question[27][answer_id]" value="87" checked="checked">
+                          <false><input type="radio" name="question[27][answer_id]" value="87"></false>
+                    </check>
+                    Jeg sover højst 7-8 timer om natten og slet ikke i løbet af dagen.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[27][answer_id]) and @DATA.question[27][answer_id]== 88}}">
+                          <input type="radio" name="question[27][answer_id]" value="88" checked="checked">
+                          <false><input type="radio" name="question[27][answer_id]" value="88"></false>
+                    </check>
+                    Jeg sover op til 10 timer i løbet af et døgn, iberegnet en lur engang imellem.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[27][answer_id]) and @DATA.question[27][answer_id]== 89}}">
+                          <input type="radio" name="question[27][answer_id]" value="89" checked="checked">
+                          <false><input type="radio" name="question[27][answer_id]" value="89"></false>
+                    </check>
+                    Jeg sover op til 12 timer i løbet af et døgn, iberegnet en lur engang imellem.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[27][answer_id]) and @DATA.question[27][answer_id]== 90}}">
+                          <input type="radio" name="question[27][answer_id]" value="90" checked="checked">
+                          <false><input type="radio" name="question[27][answer_id]" value="90"></false>
+                    </check>
+                    Jeg sover mere end 12 timer i løbet af et døgn, iberegnet en lur engang imellem.
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!-- /container -->
+
+

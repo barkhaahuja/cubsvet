@@ -1,0 +1,51 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="8">
+
+    <h2>6. Anden aktuel behandling</h2>
+
+    <h4 class="text-muted">Modtager du aktuelt, andetsteds end her, anden form for behandling af psykisk lidelse (udover
+        medicin og samtaler ved egen læge)?</h4>
+
+    <div class="row">
+        <div class="col-sm-1">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[9][response]) and @DATA.question[9][response]=='yes' }}">
+                        <input type="radio" name="question[9][response]" value="yes" checked>
+                        <false><input type="radio" name="question[9][response]" value="yes"></false>
+                    </check>
+                    Ja
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-1">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[9][response]) and @DATA.question[9][response]=='no' }}">
+                        <input type="radio" name="question[9][response]" value="no" checked>
+                        <false><input type="radio" name="question[9][response]" value="no"></false>
+                    </check>
+                    Nej
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="field-description">
+                <p>Hvis ja, hvilken form:</p>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <textarea name="question[9][response_value]" class="form-control" rows="3">{{ isset(@DATA.question[9][response_value]) ? @DATA.question[9][response_value] : '' }}</textarea>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->
+

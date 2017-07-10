@@ -1,0 +1,5 @@
+<h2>Home</h2>
+<p>{{ @logged_user.name }}</p>
+<p>{{ @logged_user.last_name }}</p>
+<p>Email Address : {{ @logged_user.email }}</p>
+<p>Role : {{ @logged_user->getGroupName() }}</p>

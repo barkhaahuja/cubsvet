@@ -1,0 +1,57 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="14">
+
+    <h2>11. Personlig pleje</h2>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[15][answer_id]) and @DATA.question[15][answer_id]== 43}}">
+                          <input type="radio" name="question[15][answer_id]" value="43" checked="checked">
+                          <false><input type="radio" name="question[15][answer_id]" value="43"></false>
+                    </check>
+                    Jeg har ingen problemer med min personlige pleje
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[15][answer_id]) and @DATA.question[15][answer_id]== 44}}">
+                          <input type="radio" name="question[15][answer_id]" value="44" checked="checked">
+                          <false><input type="radio" name="question[15][answer_id]" value="44"></false>
+                    </check>
+                    Jeg har nogle problemer med at vaske mig eller klæde mig på
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                 <check if="{{ isset(@DATA.question[15][answer_id]) and @DATA.question[15][answer_id]== 45}}">
+                          <input type="radio" name="question[15][answer_id]" value="45" checked="checked">
+                          <false><input type="radio" name="question[15][answer_id]" value="45"></false>
+                    </check>
+                    Jeg kan ikke vaske mig eller klæde mig på
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->
+
+

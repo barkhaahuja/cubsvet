@@ -1,0 +1,40 @@
+<h4>Big Questionnaire</h4>
+
+<div class="row">
+    <div class="col-sm-4">
+        <div class="radio">
+            <label>Date Started: </label>{{@questionnaire_start_date}}
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="radio">
+            <label>Date Ended: </label> {{@questionnaire_end_date}}
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="radio">
+            <label>Created by: </label>Doctor Who
+        </div>
+    </div>
+</div>
+
+<table class="table table-striped table-hover table-bordered">
+    <tr>
+        <th>Question</th>
+        <th>Answer</th>
+        <th>Date</th>
+    </tr>
+    <repeat group="{{ @responses }}" value="{{ @response }}">
+        <tr>
+            <td>
+                {{ @response['question'] }}<br/>{{empty(@response['answer']) ? '' : '&nbsp;&nbsp; - '}}{{ @response['answer'] }}
+            </td>
+        <check if="{{@response['response']==''}}">
+            <td>{{ @response['answer'] }} {{empty(@response['response_value']) ? '' : ' - '}} {{ @response['response_value'] }}</td>
+            <false><td>{{ @response['response'] }} {{empty(@response['response_value']) ? '' : ' - '}} {{ @response['response_value'] }}</td></false>
+         </check>   
+            <td>{{ @response['create_date'] }}</td>
+        </tr>
+    </repeat>
+</table>

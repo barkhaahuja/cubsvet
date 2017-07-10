@@ -1,0 +1,18 @@
+<h4>Problem Goal List</h4>
+
+<table class="table table-striped table-hover table-bordered">
+    <tr>
+        <th>Title</th>
+        <th>Problem</th>
+        <th>Situation</th>
+        <th>Goal</th>
+    </tr>
+    <repeat group="{{ @pgs }}" value="{{ @pg }}">
+        <tr>
+            <td>{{ @pg.title }}</td>
+            <td>{{ @pg.problem }}</td>
+            <td>{{ @pg.situation }}</td>
+            <td>{{ @pg.goal }}</td>
+        </tr>
+    </repeat>
+</table>

@@ -1,0 +1,69 @@
+<style>
+    .quiz-container {
+        background-color: #ffffff;
+    }
+
+    .carousel-indicators {
+        display: none;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .pull-right .btn.btn-success.btn-lg {
+        display: none;
+    }
+
+    .btn.btn-success.btn-lg {
+        margin-top: 100px;
+        width: 250px;
+    }
+</style>
+<div class="container">
+    <input name="separator" type="hidden" value="14">
+    <img src="{{ @ROOT }}/assets/img/logo_end.png">
+
+    <h3>Færdig!</h3>{{@quiz_id}}
+
+    <p>
+        <check if="{{@onStepX}}">
+            Du har afsluttet introduktionen til NoDep.<br>
+            Du vil nu blive logget af programmet og kan først logge ind igen, når venteperioden på 10 uger er ovre.<br>
+            Du vil få en besked, når du kan logge ind igen.
+            <false>
+                Tak for dine svar. Tryk på “afslut” for at lukke vinduet og komme
+                igang med at bruge programmet.
+            </false>
+        </check>
+
+    </p>
+
+    <a id="quiz4-end" href="javascript:void(0);" class="btn btn-success btn-lg">
+        AFSLUT
+    </a>
+
+</div>
+<script>
+    $('#quiz4-end').on('click', function () {
+        // update step
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: "{{@ROOT}}/user/update/step",
+            data: {id: "{{@user_id}}", treatment_step: '4.0'},
+            success: function (){
+                // this call closes the quiz, end it up
+                $.ajax({
+                    type: 'POST',
+                    dataType: 'json',
+                    url: "{{@ROOT}}/quiz_ajax/update_step",
+                    data: {id: "{{@quiz_id}}", completed_date: new Date().toISOString().slice(0, 19).replace('T', ' ')},
+                    success: function (){
+                        window.parent.location.href = "{{@ROOT}}/";
+                    }
+                });
+            }
+        });
+    });
+</script>

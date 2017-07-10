@@ -1,0 +1,72 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="28">
+
+    <h2>23. Tendens til nedtrykthed</h2>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[28][answer_id]) and @DATA.question[28][answer_id]== 91}}">
+                          <input type="radio" name="question[28][answer_id]" value="91" checked="checked">
+                          <false><input type="radio" name="question[28][answer_id]" value="91"></false>
+                    </check>
+                    Jeg føler mig ikke nedtrykt.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[28][answer_id]) and @DATA.question[28][answer_id]== 92}}">
+                          <input type="radio" name="question[28][answer_id]" value="92" checked="checked">
+                          <false><input type="radio" name="question[28][answer_id]" value="92"></false>
+                    </check>
+                    Jeg føler mig nedtrykt mindre end halvdelen af tiden.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[28][answer_id]) and @DATA.question[28][answer_id]== 93}}">
+                          <input type="radio" name="question[28][answer_id]" value="93" checked="checked">
+                          <false><input type="radio" name="question[28][answer_id]" value="93"></false>
+                    </check>
+                    Jeg føler mig nedtrykt det meste af tiden.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[28][answer_id]) and @DATA.question[28][answer_id]== 94}}">
+                          <input type="radio" name="question[28][answer_id]" value="94" checked="checked">
+                          <false><input type="radio" name="question[28][answer_id]" value="94"></false>
+                    </check>
+                    Jeg føler mig næsten hele tiden nedtrykt.
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->
+

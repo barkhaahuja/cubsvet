@@ -1,0 +1,78 @@
+<input name="quiz_id" type="hidden"
+       value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="46">
+<div class="container">
+
+    <h2>43. Smerter</h2>
+
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[50][answer_id]) and @DATA.question[50][answer_id]==171 }}">
+                        <input type="radio" name="question[50][answer_id]" value="171"
+                               checked="checked">
+                        <false><input type="radio" name="question[50][answer_id]"
+                                      value="171"></false>
+                    </check>
+                    Jeg føler mig ikke tung i mine arme eller ben og har ingen
+                    smerter.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[50][answer_id]) and @DATA.question[50][answer_id]==172 }}">
+                        <input type="radio" name="question[50][answer_id]" value="172"
+                               checked="checked">
+                        <false><input type="radio" name="question[50][answer_id]"
+                                      value="172"></false>
+                    </check>
+                    Det sker, at jeg får hovedpine eller mave-, ryg- eller ledsmerter,
+                    men det er smerter, der kun
+                    forekommer engang imellem, og de forhindrer mig ikke i at passe
+                    mine gøremål.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[50][answer_id]) and @DATA.question[50][answer_id]==173 }}">
+                        <input type="radio" name="question[50][answer_id]" value="173"
+                               checked="checked">
+                        <false><input type="radio" name="question[50][answer_id]"
+                                      value="173"></false>
+                    </check>
+                    Den slags smerter, har jeg det meste af tiden.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[50][answer_id]) and @DATA.question[50][answer_id]==174 }}">
+                        <input type="radio" name="question[50][answer_id]" value="174"
+                               checked="checked">
+                        <false><input type="radio" name="question[50][answer_id]"
+                                      value="174"></false>
+                    </check>
+                    Disse smerter er så stærke, at de tvinger mig til at afbryde, hvad
+                    jeg er i gang med.
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+
+</div>

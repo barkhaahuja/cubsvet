@@ -1,0 +1,74 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="29">
+
+    <h2>24. Tendens til irritabilitet</h2>
+
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[29][answer_id]) and @DATA.question[29][answer_id]== 95}}">
+                          <input type="radio" name="question[29][answer_id]" value="95" checked="checked">
+                          <false><input type="radio" name="question[29][answer_id]" value="95"></false>
+                    </check>
+                    Jeg føler mig ikke irritabel.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[29][answer_id]) and @DATA.question[29][answer_id]== 96}}">
+                          <input type="radio" name="question[29][answer_id]" value="96" checked="checked">
+                          <false><input type="radio" name="question[29][answer_id]" value="96"></false>
+                    </check>
+                    Jeg føler mig irritabel mindre end halvdelen af tiden.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[29][answer_id]) and @DATA.question[29][answer_id]== 97}}">
+                          <input type="radio" name="question[29][answer_id]" value="97" checked="checked">
+                          <false><input type="radio" name="question[29][answer_id]" value="97"></false>
+                    </check>
+                    Jeg føler mig irritabel det meste af tiden.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[29][answer_id]) and @DATA.question[29][answer_id]== 98}}">
+                          <input type="radio" name="question[29][answer_id]" value="98" checked="checked">
+                          <false><input type="radio" name="question[29][answer_id]" value="98"></false>
+                    </check>
+                    Jeg føler mig særdeles irritabel næsten hele tiden.
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!-- /container -->
+
+

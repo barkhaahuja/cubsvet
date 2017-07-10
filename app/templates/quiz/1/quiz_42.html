@@ -1,0 +1,75 @@
+<input name="quiz_id" type="hidden"
+       value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="40">
+
+<div class="container">
+
+    <h2>37. Generel interesse</h2>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[44][answer_id]) and @DATA.question[44][answer_id]== 147}}">
+                        <input type="radio" name="question[44][answer_id]" value="147" checked="checked">
+                        <false><input type="radio" name="question[44][answer_id]" value="147"></false>
+                    </check>
+                    Min interesse for andre mennesker og aktiviteter er uændret.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[44][answer_id]) and @DATA.question[44][answer_id]== 148}}">
+                        <input type="radio" name="question[44][answer_id]" value="148" checked="checked">
+                        <false><input type="radio" name="question[44][answer_id]" value="148"></false>
+                    </check>
+                    Jeg har lagt mærke til, at min interesse for andre mennesker eller
+                    aktiviteter er blevet mindre.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[44][answer_id]) and @DATA.question[44][answer_id]== 149}}">
+                        <input type="radio" name="question[44][answer_id]" value="149" checked="checked">
+                        <false><input type="radio" name="question[44][answer_id]" value="149"></false>
+                    </check>
+                    Jeg har lagt mærke til, at det er kun en eller to af mine
+                    tidligere aktiviteter jeg stadigvæk er interesseret i.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[44][answer_id]) and @DATA.question[44][answer_id]== 150}}">
+                        <input type="radio" name="question[44][answer_id]" value="150" checked="checked">
+                        <false><input type="radio" name="question[44][answer_id]" value="150"></false>
+                    </check>
+                    Jeg har praktisk taget ingen interesse længere for mine tidligere
+                    aktiviteter.
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->

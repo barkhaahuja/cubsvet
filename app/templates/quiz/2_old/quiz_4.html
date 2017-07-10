@@ -1,0 +1,71 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="4">
+
+    <h2>3. Tanker om død eller selvmord</h2>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[82][answer_id]) and @DATA.question[82][answer_id]==227 }}">
+                          <input type="radio" name="question[82][answer_id]" value="227" checked="checked">
+                          <false><input type="radio" name="question[82][answer_id]" value="227"></false>
+                    </check>
+                    Jeg tænker ikke på selvmord eller død.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[82][answer_id]) and @DATA.question[82][answer_id]==228 }}">
+                          <input type="radio" name="question[82][answer_id]" value="228" checked="checked">
+                          <false><input type="radio" name="question[82][answer_id]" value="228"></false>
+                    </check>
+                    Jeg føler, at tilværelsen er tom, eller spekulerer på om livet er værd at leve.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[82][answer_id]) and @DATA.question[82][answer_id]==229 }}">
+                          <input type="radio" name="question[82][answer_id]" value="229" checked="checked">
+                          <false><input type="radio" name="question[82][answer_id]" value="229"></false>
+                    </check>
+                    Jeg tænker på selvmord eller død flere gange om ugen, i flere minutter ad gangen.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[82][answer_id]) and @DATA.question[82][answer_id]==230 }}">
+                          <input type="radio" name="question[82][answer_id]" value="230" checked="checked">
+                          <false><input type="radio" name="question[82][answer_id]" value="230"></false>
+                    </check>
+                    Jeg tænker indgående på selvmord eller død flere gange om dagen, eller jeg har lagt konkrete selvmordsplaner, eller jeg har faktisk forsøgt at tage mit liv.
+                </label>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /container -->

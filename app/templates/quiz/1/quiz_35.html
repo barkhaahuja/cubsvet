@@ -1,0 +1,75 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="33">
+
+    <h2>28. Sindsstemningens karakter</h2>
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[33][answer_id]) and @DATA.question[33][answer_id]== 111}}">
+                        <input type="radio" name="question[33][answer_id]" value="111" checked="checked">
+                        <false><input type="radio" name="question[33][answer_id]" value="111"></false>
+                    </check>
+                    Jeg oplever min sindsstemning (indre følelser),som normal.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[33][answer_id]) and @DATA.question[33][answer_id]== 112}}">
+                        <input type="radio" name="question[33][answer_id]" value="112" checked="checked">
+                        <false><input type="radio" name="question[33][answer_id]" value="112"></false>
+                    </check>
+                    Humøret er nedtrykt, men på en måde der svarer nogenlunde til det
+                    triste humør, jeg ville være i, hvis én af mine nærmeste døde eller forlod mig.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[33][answer_id]) and @DATA.question[33][answer_id]== 113}}">
+                        <input type="radio" name="question[33][answer_id]" value="113" checked="checked">
+                        <false><input type="radio" name="question[33][answer_id]" value="113"></false>
+                    </check>
+                    Humøret er nedtrykt, men nedtryktheden adskiller sig en del fra
+                    det triste humør, jeg ville være i, hvis én af mine nærmeste døde eller forlod mig.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-9">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[33][answer_id]) and @DATA.question[33][answer_id]== 114}}">
+                        <input type="radio" name="question[33][answer_id]" value="114" checked="checked">
+                        <false><input type="radio" name="question[33][answer_id]" value="114"></false>
+                    </check>
+                    Humøret er nedtrykt, men denne følelse er helt anderledes end den,
+                    der er forbundet med sorg eller tab.
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!-- /container -->

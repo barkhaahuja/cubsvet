@@ -1,0 +1,16 @@
+<repeat group="{{ range(1,@carousel_indicators.pages) }}" value="{{ @indicator }}">
+    <check if="{{ @indicator <= @carousel_indicators.active }}">
+        <true>
+            <li class="active"></li>
+            <exclude>
+                onclick="showQuiz({{@quiz_id}}, {{ @carousel_indicators.id }},{{ @indicator +  @carousel_indicators.offset }} );"></li>
+            </exclude>
+        </true>
+        <false>
+            <li></li>
+            <exclude>
+                onclick="showQuiz({{@quiz_id}}, {{ @carousel_indicators.id }},{{ @indicator +  @carousel_indicators.offset }} );"></li>
+            </exclude>
+        </false>
+    </check>
+</repeat>

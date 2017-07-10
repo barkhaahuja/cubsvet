@@ -1,0 +1,76 @@
+<div class="container">
+    <input name="quiz_id" type="hidden"
+           value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+    <input name="step" type="hidden" value="31">
+
+    <h2>26. Humørmæssig reaktion på gode eller ønskede begivenheder</h2>
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[31][answer_id]) and @DATA.question[31][answer_id]== 103}}">
+                        <input type="radio" name="question[31][answer_id]" value="103" checked="checked">
+                        <false><input type="radio" name="question[31][answer_id]" value="103"></false>
+                    </check>
+                    Når der hænder noget godt, stiger mit humør til normalt niveau -
+                    som så holder i flere timer.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[31][answer_id]) and @DATA.question[31][answer_id]== 104}}">
+                        <input type="radio" name="question[31][answer_id]" value="104" checked="checked">
+                        <false><input type="radio" name="question[31][answer_id]" value="104"></false>
+                    </check>
+                    Mit humør bliver bedre, når der sker noget godt, men jeg bliver
+                    ikke som normalt.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-7">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[31][answer_id]) and @DATA.question[31][answer_id]== 105}}">
+                        <input type="radio" name="question[31][answer_id]" value="105" checked="checked">
+                        <false><input type="radio" name="question[31][answer_id]" value="105"></false>
+                    </check>
+                    Mit humør bliver kun lidt bedre ved nogle få særlige begivenheder.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[31][answer_id]) and @DATA.question[31][answer_id]== 106}}">
+                        <input type="radio" name="question[31][answer_id]" value="106" checked="checked">
+                        <false><input type="radio" name="question[31][answer_id]" value="106"></false>
+                    </check>
+                    Mit humør bliver slet ikke bedre, selv når der hænder noget
+                    virkelig godt eller ønsket i mit liv.
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+<!-- /container -->
+

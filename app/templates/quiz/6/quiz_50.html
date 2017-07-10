@@ -1,0 +1,80 @@
+<input name="quiz_id" type="hidden"
+       value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="51">
+<div class="container">
+
+    <h2>48. Kraftesløshed/ blytunghed / fysisk energi</h2>
+
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[55][answer_id]) and @DATA.question[55][answer_id]==191 }}">
+                        <input type="radio" name="question[55][answer_id]" value="191"
+                               checked="checked">
+                        <false><input type="radio" name="question[55][answer_id]"
+                                      value="191"></false>
+                    </check>
+                    Jeg har ikke oplevet en fysisk fornemmelse af at være tynget ned
+                    og uden fysisk energi.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[55][answer_id]) and @DATA.question[55][answer_id]==192 }}">
+                        <input type="radio" name="question[55][answer_id]" value="192"
+                               checked="checked">
+                        <false><input type="radio" name="question[55][answer_id]"
+                                      value="192"></false>
+                    </check>
+                    Jeg har en gang imellem haft perioder, hvor jeg følte mig fysisk
+                    tynget ned og uden fysisk energi,
+                    men uden at dette havde en negativ indvirkning på arbejde,
+                    skolegang eller aktivitetsniveau.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[55][answer_id]) and @DATA.question[55][answer_id]==193 }}">
+                        <input type="radio" name="question[55][answer_id]" value="193"
+                               checked="checked">
+                        <false><input type="radio" name="question[55][answer_id]"
+                                      value="193"></false>
+                    </check>
+                    Jeg føler mig fysisk tynget ned (uden fysisk energi) mere end
+                    halvdelen af tiden.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[55][answer_id]) and @DATA.question[55][answer_id]==194 }}">
+                        <input type="radio" name="question[55][answer_id]" value="194"
+                               checked="checked">
+                        <false><input type="radio" name="question[55][answer_id]"
+                                      value="194"></false>
+                    </check>
+                    Jeg føler mig fysisk tynget ned (uden fysisk energi) det meste af
+                    tiden, adskillige timer dagligt,
+                    flere dage om ugen.
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+
+</div>

@@ -1,0 +1,67 @@
+<input name="quiz_id" type="hidden"
+       value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="43">
+
+<div class="container">
+
+    <h2>40. Interesse for sex (angiv, venligst interesse, ikke aktivitet)</h2>
+
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[47][answer_id]) and @DATA.question[47][answer_id]==159 }}">
+                        <input type="radio" name="question[47][answer_id]" value="159" checked="checked">
+                        <false><input type="radio" name="question[47][answer_id]" value="159"></false>
+                    </check>
+                    Min interesse for sex er helt uændret
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[47][answer_id]) and @DATA.question[47][answer_id]==160 }}">
+                        <input type="radio" name="question[47][answer_id]" value="160" checked="checked">
+                        <false><input type="radio" name="question[47][answer_id]" value="160"></false>
+                    </check>
+                    Min interesse for sex er noget mindre end sædvanlig, eller jeg har
+                    ikke samme glæde ved sex, som jeg plejer.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[47][answer_id]) and @DATA.question[47][answer_id]==161 }}">
+                        <input type="radio" name="question[47][answer_id]" value="161" checked="checked">
+                        <false><input type="radio" name="question[47][answer_id]" value="161"></false>
+                    </check>
+                    Jeg har kun lidt lyst til eller sjældent glæde ved sex.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[47][answer_id]) and @DATA.question[47][answer_id]==162 }}">
+                        <input type="radio" name="question[47][answer_id]" value="162" checked="checked">
+                        <false><input type="radio" name="question[47][answer_id]" value="162"></false>
+                    </check>
+                    Jeg har absolut ingen interesse for eller glæde ved sex.
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+
+</div>

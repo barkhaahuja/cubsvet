@@ -1,0 +1,31 @@
+<!--left navigation starts-->
+
+<div id="Dash-left-NavBox">
+    <ul>
+        <check if="{{ isset(@showAdminButton) && @showAdminButton }}">
+        <li>
+            <a href="{{ @ROOT }}/section/settings.profile" class="Dash-Profile noBoarder {{ @PARAMS.id == 'settings.profile' ? 'active' : '' }}">Profil</a></li>
+         <li><a href="{{ @ROOT.'/section/settings.notification' }}" class="Dash-Notification {{ @PARAMS.id == 'settings.notification' ? 'active' : '' }}">Påmindelser</a></li>
+            <false>
+                <li><a href="{{ @ROOT.'/section/settings.profile' }}" class="Dash-Profile noBoarder {{ @PARAMS.id == 'settings.profile' ? 'active' : '' }}">Profil</a></li>
+                <li><a href="{{ @ROOT.'/section/settings.notification' }}" class="Dash-Notification {{ @PARAMS.id == 'settings.notification' ? 'active' : '' }}">Påmindelser</a></li>
+                <li><a href="{{ (@is_first_login) ? @ROOT.'/' : @ROOT.'/section/settings.help' }}" class="Dash-Help {{ @PARAMS.id == 'settings.help' ? 'active' : '' }}">Hjælp</a></li>
+                <li><a href="{{ (@is_first_login) ? @ROOT.'/' : @ROOT.'/section/settings.information' }}" class="Dash-Info {{ @PARAMS.id == 'settings.information' ? 'active' : '' }}">Information</a></li>
+            </false>
+        </check>
+    </ul>
+</div>
+<!--left navigation ends-->
+<!--<div id="Dash-left-NavBox">
+    <ul>
+        <check if="{{ isset(@showAdminButton) && @showAdminButton }}">
+        <li><a href="{{ @ROOT }}/section/settings.profile" class="Dash-Profile noBoarder {{ @PARAMS.id == 'settings.profile' ? 'active' : '' }}">Profil</a></li>
+            <false>
+                <li><a href="{{ @ROOT.'/section/settings.profile' }}" class="Dash-Profile noBoarder {{ @PARAMS.id == 'settings.profile' ? 'active' : '' }}">Profil</a></li>
+                <li><a href="{{ @ROOT.'/section/settings.notification' }}" class="Dash-Notification {{ @PARAMS.id == 'settings.notification' ? 'active' : '' }}">Påmindelser</a></li>
+                <li><a href="{{ (@is_first_login) ? @ROOT.'/' : @ROOT.'/section/settings.help' }}" class="Dash-Help {{ @PARAMS.id == 'settings.help' ? 'active' : '' }}">Hjælp</a></li>
+                <li><a href="{{ (@is_first_login) ? @ROOT.'/' : @ROOT.'/section/settings.information' }}" class="Dash-Info {{ @PARAMS.id == 'settings.information' ? 'active' : '' }}">Information</a></li>
+            </false>
+        </check>
+    </ul>
+</div>-->

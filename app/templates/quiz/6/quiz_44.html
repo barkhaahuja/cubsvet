@@ -1,0 +1,68 @@
+<input name="quiz_id" type="hidden"
+       value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="45">
+<div class="container">
+
+    <h2>42 . Følelse af rastløshed</h2>
+
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[49][answer_id]) and @DATA.question[49][answer_id]==167 }}">
+                        <input type="radio" name="question[49][answer_id]" value="167" checked="checked">
+                        <false><input type="radio" name="question[49][answer_id]" value="167"></false>
+                    </check>
+                    Jeg føler mig ikke rastløs.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[49][answer_id]) and @DATA.question[49][answer_id]==168 }}">
+                        <input type="radio" name="question[49][answer_id]" value="168" checked="checked">
+                        <false><input type="radio" name="question[49][answer_id]" value="168"></false>
+                    </check>
+                    Jeg er ofte urolig, vrider mine hænder eller er nødt til at skifte
+                    stilling, når jeg sidder ned.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[49][answer_id]) and @DATA.question[49][answer_id]==169 }}">
+                        <input type="radio" name="question[49][answer_id]" value="169" checked="checked">
+                        <false><input type="radio" name="question[49][answer_id]" value="169"></false>
+                    </check>
+                    Jeg føler trang til bevæge mig omkring hele tiden og er temmeligt
+                    rastløs.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[49][answer_id]) and @DATA.question[49][answer_id]==170 }}">
+                        <input type="radio" name="question[49][answer_id]" value="170" checked="checked">
+                        <false><input type="radio" name="question[49][answer_id]" value="170"></false>
+                    </check>
+                    Til tider er jeg overhovedet ikke i stand til at blive siddende,
+                    men er nødt til at trave frem og tilbage.
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+
+</div>

@@ -1,0 +1,70 @@
+<input type="hidden" id="eflag">
+<div class="WidgetWidth200 shadow RadCornAll WD-AL-BGC" style="background-color: #8ED2CC;">
+    <div class="WidgetHeaderBar">Depressive grublerier<a href="#" class="deprs-help"></a></div>
+
+    <div class="ContentWidgetNu">
+
+        <div style="text-align: center; padding: 10px;"><img src="{{ @ROOT }}/assets/img/depressive.png" /></div>
+       
+    </div>
+    <div class="WD-Button WidgetButtons" style="background-color: #9FD9D4;">
+        <a href="javascript:void(0)" id="ButtonDepressive" class="WB-FullBlank RadCornAllExtreme" style="background:#B2E1DD">ÅBN</a>
+    </div>
+<input type="hidden" id="tstep">
+    <div id="ContentDepressive"></div>
+
+
+</div>
+
+<div id="Deprs-HelpContent" class="popover bottom">
+    <div class="title">Depressive grublerier</div>
+    <p>
+        Dette er dit redskab til at arbejde
+        med depressive grublerier, som blev
+        introduceret i Trin B. Du skal bruge
+        det til at tænke over, og kortlægge,
+        nogle af dine depressive grublerier,
+        og efterfølgende arbejde med dem
+        udfra tre værktøjer.<br/><br/>
+        Klik på ÅBN for at bruge redskabet.
+    </p>
+</div>
+
+<script>
+    $(document).ready(function() {
+        // modal help
+        $('.deprs-help').popover({
+            content: $('#Deprs-HelpContent').html(),
+            html: true,
+            placement: 'bottom',
+            trigger: 'hover',
+            container: 'body'
+        });
+       
+        
+    });
+
+
+     
+
+    $('#ButtonDepressive').click(function() {
+        var url;
+        
+
+        
+           
+        url = '{{@ROOT}}/window/depressive/depressive2?id={{ date("Ymdhis", time()) }}';
+            
+        
+        $('#ContentDepressive').load(url, function() {
+
+            $(document.body).removeClass('modal-open');
+            $('#ModalDepressiveWidget2').modal('show');
+            $('#ModalDepressiveWidget2').on('hidden.bs.modal', function(e) {
+              
+               $(document.body).removeClass('modal-open');
+            });
+        });
+    });
+
+</script>

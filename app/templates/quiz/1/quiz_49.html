@@ -1,0 +1,77 @@
+<input name="quiz_id" type="hidden"
+       value="{{ isset(@quiz_id) ? @quiz_id : '' }}">
+<input name="step" type="hidden" value="47">
+<div class="container">
+
+    <h2>44. Andre fysiske symptomer</h2>
+
+
+    <hr class="visible-xs">
+
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[51][answer_id]) and @DATA.question[51][answer_id]==175 }}">
+                        <input type="radio" name="question[51][answer_id]" value="175"
+                               checked="checked">
+                        <false><input type="radio" name="question[51][answer_id]"
+                                      value="175"></false>
+                    </check>
+                    Jeg har ingen af følgende symptomer: Hurtig hjertebanken, sløret syn, svedeture, hede- og kuldeture,
+                    smerter i brystet, kolbøtteagtige hjerteslag, ringen for ørene eller rysten.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[51][answer_id]) and @DATA.question[51][answer_id]==176 }}">
+                        <input type="radio" name="question[51][answer_id]" value="176"
+                               checked="checked">
+                        <false><input type="radio" name="question[51][answer_id]"
+                                      value="176"></false>
+                    </check>
+                    Jeg har nogle af disse symptomer, men de er lette og forekommer
+                    kun engang imellem.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[51][answer_id]) and @DATA.question[51][answer_id]==177 }}">
+                        <input type="radio" name="question[51][answer_id]" value="177"
+                               checked="checked">
+                        <false><input type="radio" name="question[51][answer_id]"
+                                      value="177"></false>
+                    </check>
+                    Jeg har flere af disse symptomer, og de generer mig temmeligt
+                    meget.
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="radio">
+                <label>
+                    <check if="{{ isset(@DATA.question[51][answer_id]) and @DATA.question[51][answer_id]==178 }}">
+                        <input type="radio" name="question[51][answer_id]" value="178"
+                               checked="checked">
+                        <false><input type="radio" name="question[51][answer_id]"
+                                      value="178"></false>
+                    </check>
+                    Jeg har flere af disse symptomer, og når de forekommer, er jeg
+                    nødt til afbryde, hvad jeg er igang med.
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- /container -->
+
+</div>

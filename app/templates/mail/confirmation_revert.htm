@@ -1,0 +1,36 @@
+<div style="background:#fff;border:1px solid #ccc;border-radius:5px;padding:20px">
+    <table style="width:100%;border-collapse:collapse">
+        <tbody>
+            <tr>
+                <td style="font:14px/1.4285714 Arial,sans-serif;padding:0">
+                    <p>Hej {{@user_name}}</p><br>
+
+                    <p style="margin-bottom:0;margin-top:0">
+                        Du er blevet oprettet i NoDep-programmet som brugeren <b>{{@user_name}}</b>.
+                    </p><br>
+
+                    <p>Dine login oplysninger er:</p>
+
+                    <p><b>login:</b> {{@user_email}}</p>
+
+                    <p><b>password:</b> {{@user_password}}</p><br>
+
+                    <p style="margin-bottom:0">
+                        Klik på linket herunder for at bekræfte oprettelsen i NoDep.
+                    </p><br>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <br><b>Du vil ikke være i stand til at logge ind før du har bekræftet oprettelsen.</b>
+                </td>
+            </tr>
+            <tr>
+                <td><br><p>Efter du har bekræftet, skal du for fremtiden anvende følgende link til at logge på programmet: {{@ROOT}}
+                        Med venlig hilsen,
+                        Internetpsykiatrien</p></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
