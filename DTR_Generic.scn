@@ -1,0 +1,166 @@
+LoadDMC({dmc_file: dmc_file_path});
+	StartLogging();
+	
+	IF (port == "GSM_B900_140"){
+		system = 'gsm';
+		}
+	ELSE IF (port == "GSM_B900_141"){
+		system = 'gsm';
+		}
+	ELSE IF (port == "GSM_B1800_142"){
+		system = 'gsm';
+		}
+	ELSE IF (port == "GSM_B1800_143"){
+		system = 'gsm';
+		}
+	ELSE IF (port == "GSM_B1900_144"){
+		system = 'gsm';
+		}
+	ELSE IF (port == "GSM_B1900_145"){
+		system = 'gsm';
+		}
+	ELSE IF (port == "LTE_B40_3"){
+		band = 'B40';
+		system = 'lte';
+		}
+	ELSE IF (port == "LTE_B40_4"){
+		band = 'B40';
+		system = 'lte';
+		}
+	ELSE IF (port == "LTE_B40_5"){
+		band = 'B40';
+		system = 'lte';
+		}
+	ELSE IF (port == "LTE_B5_185"){
+		band = 'B5';
+		system = 'lte';
+		}
+	ELSE IF (port == "LTE_B8_114"){
+		band = 'B8';
+		system = 'lte';
+		}
+	ELSE IF (port == "LTE_B8_115"){
+		band = 'B8';
+		system = 'lte';
+		}
+	ELSE IF (port == "LTE_B1_347"){
+		band = 'B1';
+		system = 'lte';
+		}
+	ELSE IF (port == "LTE_B7_349"){
+		band = 'B7';
+		system = 'lte';
+		}
+	ELSE IF (port == "LTE_B1_348"){
+		band = 'B1';
+		system = 'lte';
+		}
+	ELSE IF (port == "LTE_B3_435"){
+		band = 'B3';
+		system = 'lte';
+		}
+	ELSE IF (port == "LTE_B1_436"){
+		band = 'B1';
+		system = 'lte';
+		}
+	ELSE IF (port == "NR_n78_521"){
+		band = 'n78';
+		Tech = 'SA';
+		system = 'nr5g_sa';
+		}
+	ELSE IF (port == "NR_n41_517"){
+		band = 'n41';
+		Tech = 'SA';
+		system = 'nr5g_sa';
+		}
+	ELSE IF (port == "NR_n41_518"){
+		band = 'n41';
+		Tech = 'SA';
+		system = 'nr5g_sa';
+		}
+	ELSE IF (port == "NR_n78_519"){
+		band = 'n78';
+		Tech = 'SA';
+		system = 'nr5g_sa';
+		}
+	ELSE IF (port == "NR_n41_520"){
+		band = 'n41';
+		Tech = 'SA';
+		system = 'nr5g_sa';
+		}
+	ELSE IF (port == "NR_n78_516"){
+		band = 'n78';
+		Tech = 'SA';
+		system = 'nr5g_sa';
+		}
+	ELSE IF (port == "1xEVDO_B1900_3_402"){
+		system = '1xEVDO';
+		}
+		
+	##Setting Band preferences
+	
+	IF (band == 'B40' and system == 'lte')
+    	{
+            setbandprefadvanced({nr5g_sa_band_pref:{'1':0, '2':0},nr5g_nsa_band_pref :{'1':0, '2':0}, band_pref: '0', lte_band_pref: 549,755,813,888, tdscdma_band_pref: '0', subs_id: 'primary'});	
+    	}
+	ELSE IF (band == 'B5' and system == 'lte')
+    	{
+    		setbandprefadvanced({nr5g_sa_band_pref:{'1':0, '2':0},nr5g_nsa_band_pref :{'1':0, '2':0}, band_pref: '0', lte_band_pref: 16, tdscdma_band_pref: '0', subs_id: 'primary'});
+    	}	
+	ELSE IF (band == 'B8' and system == 'lte')
+    	{
+    		setbandprefadvanced({nr5g_sa_band_pref:{'1':0, '2':0},nr5g_nsa_band_pref :{'1':0, '2':0}, band_pref: '0', lte_band_pref: 128, tdscdma_band_pref: '0', subs_id: 'primary'});
+    	}	
+	ELSE IF (band == 'B1' and system == 'lte')
+    	{
+    		setbandprefadvanced({nr5g_sa_band_pref:{'1':0, '2':0},nr5g_nsa_band_pref :{'1':0, '2':0}, band_pref: '0', lte_band_pref: 1, tdscdma_band_pref: '0', subs_id: 'primary'});
+    	}	
+		
+	ELSE IF (band == 'B3' and system == 'lte')
+    	{
+    		setbandprefadvanced({nr5g_sa_band_pref:{'1':0, '2':0},nr5g_nsa_band_pref :{'1':0, '2':0}, band_pref: '0', lte_band_pref: 4, tdscdma_band_pref: '0', subs_id: 'primary'});
+    	}
+	ELSE IF (band == 'B7' and system == 'lte')
+    	{
+    		setbandprefadvanced({nr5g_sa_band_pref:{'1':0, '2':0},nr5g_nsa_band_pref :{'1':0, '2':0}, band_pref: '0', lte_band_pref: 64, tdscdma_band_pref: '0', subs_id: 'primary'});
+    	}
+		
+	ELSE IF (band == 'n41' and system == 'nr5g_sa')
+    	{
+			setbandprefadvanced({nr5g_sa_band_pref:{'1':1099511627776, '2':0},nr5g_nsa_band_pref :{'1':0, '2':0}, band_pref: '0', lte_band_pref: 0, tdscdma_band_pref: '0', subs_id: 'primary'});
+		}
+	ELSE IF (band == 'n78' and system == 'nr5g_sa')
+    	{
+    		setbandprefadvanced({nr5g_sa_band_pref:{'1':0, '2':8192},nr5g_nsa_band_pref :{'1':0, '2':0}, band_pref: '0', lte_band_pref: 0, tdscdma_band_pref: '0', subs_id: 'primary'});
+	  	}
+	
+	#turn ON respective port
+	TurnOffSelectPorts({ports: [port]});	
+	
+	#setting the mode pref as per the port
+    IF (Tech == "NSA"){
+        setmodepref({systems:['lte','nr5g'],subs_id:0, 'apkfix': 1});
+    }
+    ELSE{
+        setmodepref({systems:[system],subs_id:0, 'apkfix': 1});
+    }
+    
+    ResetDevice();
+    msleep({time:reset_sleep_time});
+    
+     ## Trigger Lpm-> Online
+	SetOperatingMode({mode: 'lpm'});
+	msleep({time:5});
+	SetOperatingMode({mode: 'online'});
+
+	#Check camping on desired Network
+	IF (Tech == "NSA")
+    {
+        waitforsystem({systems: 'lte', timeout: camping_timeout, subs_id:0});
+        waitforsystem({systems: 'nr5g', timeout: camping_timeout, subs_id:0});
+    }
+    waitforsystem({systems: system, timeout:camping_timeout, subs_id:1});
+    
+StopLogging();
+ResetDevice();	
+	
